@@ -36,7 +36,7 @@ import * as helpers from "@codebundlesbyvik/js-helpers";
 - [getElPropValue](#getelpropvalueel-prop)
 - [getNumberArrayAverage](#getnumberarrayaveragearray-round)
 - [isMotionAllowed](#ismotionallowed)
-- [promisifiedTimeout](#promisifiedtimeoutms)
+- [sleep](#sleepms)
 
 **\*** indicates a required parameter.
 
@@ -280,11 +280,11 @@ isMotionAllowed();
 
 <br>
 
-### `promisifiedTimeout(ms)`
-Create a timeout using `setTimeout()` wrapped in a `Promise`.
+### `sleep(ms)`
+Wait for a certain amount of time before continuing script execution.
 
 #### Parameters
- - **\*** `ms` (`Number`): Duration after which the `Promise` will be resolved.
+ - **\*** `ms` (`Number`): Duration after which script execution will continue.
 
 #### Example
 ``` javascript
