@@ -1,4 +1,4 @@
-import createEl, { ElAttrs, ElTagName } from "./create-el";
+import createEl, { ElAttrs, ElTagName } from "./createEl";
 
 interface ElSkeletons {
     string: {

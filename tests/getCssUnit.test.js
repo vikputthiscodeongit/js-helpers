@@ -1,4 +1,4 @@
-import getCssUnit from "../get-css-unit";
+import getCssUnit from "../getCssUnit";
 
 test("Get 'CSS style time' unit", () => {
     expect(getCssUnit("1px")).toBe("px");
