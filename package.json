@@ -1,0 +1,47 @@
+{
+  "name": "@codebundlesbyvik/js-helpers",
+  "version": "1.0.0",
+  "description": "JavaScript helper functions for various operations.",
+  "keywords": [
+    "es6",
+    "typescript",
+    "ts",
+    "helpers",
+    "css",
+    "create",
+    "fetch",
+    "get",
+    "strip",
+    "dom",
+    "element",
+    "number",
+    "int",
+    "prop",
+    "value",
+    "unit",
+    "average",
+    "duration",
+    "milliseconds",
+    "ms",
+    "motion",
+    "promise",
+    "time",
+    "timeout"
+  ],
+  "license": "MIT",
+  "author": "codebundlesbyvik",
+  "repository": "github:vikputthiscodeongit/js-helpers",
+  "bugs": "github.com/vikputthiscodeongit/js-helpers/issues",
+  "main": "./index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "transform": {}
+  }
+}
