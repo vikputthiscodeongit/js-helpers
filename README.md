@@ -231,8 +231,17 @@ Get the average of an array of `Number`s.
 
 #### Example
 ``` javascript
+getNumberArrayAverage([1, 2, 3]);
+// 2
+
+getNumberArrayAverage([3, 8, 41, 88, 1024]);
+// 232.8
+
 getNumberArrayAverage([3, 8, 41, 88, 1024], "floor");
 // 232
+
+getNumberArrayAverage([0.1, 0.33, 0.82, 1], "ceil");
+// 1
 ```
 
 <br>
