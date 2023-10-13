@@ -6,6 +6,24 @@ JavaScript helper functions for various operations, used across my projects.
 
 <br>
 
+## Table of Contents
+- [Installation](#installation)
+- [Functions](#functions)
+  - [createEl](#createeltagname-attrs)
+  - [createEls](#createelselskeletons)
+  - [cssTimeToMs](#csstimetomstime)
+  - [fetchWithTimeout](#fetchwithtimeout-resource-fetchoptions-timeout-)
+  - [getCssUnit](#getcssunitvalue)
+  - [getElPropValue](#getelpropvalueel-prop)
+  - [getNumberArrayAverage](#getnumberarrayaveragearray-round)
+  - [isMotionAllowed](#ismotionallowed)
+  - [sleep](#sleepms)
+- [Migrating from `@codebundlesbyvik/js-*-operations`](#migrating-from-codebundlesbyvikjs--operations)
+  - [Renamed functions](#renamed-functions)
+- [License](#license)
+
+<br>
+
 ## Installation
 Install package from npm
 
