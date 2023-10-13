@@ -35,10 +35,10 @@ npm install @codebundlesbyvik/js-helpers
 
 Import the helpers you need...
 ``` javascript
-import { getElPropValue, motionAllowed } from "@codebundlesbyvik/js-helpers";
+import { getElPropValue, isMotionAllowed } from "@codebundlesbyvik/js-helpers";
 ```
 
-...or import the module in its entirety.
+...or import the entire UMD bundle.
 ``` javascript
 import * as helpers from "@codebundlesbyvik/js-helpers";
 ```
@@ -64,8 +64,8 @@ import * as helpers from "@codebundlesbyvik/js-helpers";
 Create and return an `HTMLElement`.
 
 #### Parameters
- - **\*** `tagName` (`String`): The `HTMLElement`'s tag name.
- - `attrs` (`Object`): Individual property - value pairs to add to the `HTMLElement`.
+- **\*** `tagName` (`String`): The `HTMLElement`'s tag name.
+- `attrs` (`Object`): Individual property - value pairs to add to the `HTMLElement`.
 
 #### Example
 ```javascript
@@ -89,7 +89,7 @@ createEl("div", ATTRS);
 Create and return an object of `HTMLElement`s.
 
 #### Parameters
- - **\*** `elSkeletons` (`Object`): An object that consists of multiple [createEl](#createeltagname-attrs) `tagName` / `attrs` entries.
+- **\*** `elSkeletons` (`Object`): An object that consists of multiple [createEl](#createeltagname-attrs) `tagName` / `attrs` entries.
 
 #### Example
 ```javascript
@@ -137,15 +137,15 @@ Convert a 'CSS-style time' to a `Number` of milliseconds.
 If the given value is unitless, it'll be returned as-is. If it has an unrecognized unit, the returned value will be `null`.
 
 #### Parameters
- - `time` (`String`): 'CSS-style' time duration.
+- `time` (`String`): 'CSS-style' time duration.
 
 #### Supported units
- - `ms`: Milliseconds
- - `s`: Seconds
- - `h`: Hours
- - `d`: Days
- - `w`: Weeks
- - `y`: Years - **assumes 1 year = 365 days**
+- `ms`: Milliseconds
+- `s`: Seconds
+- `h`: Hours
+- `d`: Days
+- `w`: Weeks
+- `y`: Years - **assumes 1 year = 365 days**
 
 #### Example
 ``` javascript
@@ -172,9 +172,9 @@ Make a `fetch()` call that's aborted by an `AbortController` after a given amoun
 
 #### Parameters
 A single object, containing:
- - **\*** `resource` (`RequestInfo | URL`): Location of the resource.
- - `fetchOptions` (`RequestInit`): [Options accepted by `fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/fetch#options).
- - `timeout` (`Number`): Time in milliseconds after which `AbortController.abort()` is called and the `fetch()` is aborted. Default is `8000`.
+- **\*** `resource` (`RequestInfo | URL`): Location of the resource.
+- `fetchOptions` (`RequestInit`): [Options accepted by `fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/fetch#options).
+- `timeout` (`Number`): Time in milliseconds after which `AbortController.abort()` is called and the `fetch()` is aborted. Default is `8000`.
 
 #### Example
 ``` javascript
@@ -196,7 +196,7 @@ Get the unit of a quantitative 'CSS-style' value.
 If the given value has no unit, the returned value will be `null`.
 
 #### Parameters
- - `value` (`String`): 'CSS-style' value to get the unit from.
+- `value` (`String`): 'CSS-style' value to get the unit from.
 
 #### Example
 ``` javascript
@@ -218,8 +218,8 @@ Get an `Element`'s CSS property value.
 If the given property is not set, the returned value will be `null`.
 
 #### Parameters
- - **\*** `el` (`Element`): The target.
- - **\*** `prop` (`String`): `Element` property to retrieve.
+- **\*** `el` (`Element`): The target.
+- **\*** `prop` (`String`): `Element` property to retrieve.
 
 #### Example
 ``` javascript
@@ -244,8 +244,8 @@ getElPropValue(el, "non-existent");
 Get the average of an array of `Number`s.
 
 #### Parameters
- - **\*** `array` (`Number[]`): Array to check.
- - `round` (`"floor" | "ceil" | false`): Rounding method to apply to the average. Default is `false`.
+- **\*** `array` (`Number[]`): Array to check.
+- `round` (`"floor" | "ceil" | false`): Rounding method to apply to the average. Default is `false`.
 
 #### Example
 ``` javascript
@@ -267,11 +267,11 @@ getNumberArrayAverage([0.1, 0.33, 0.82, 1], "ceil");
 ### `getPseudoRandomIntBelow(max, includeMax)`
 Generate and return a pseudo-random integer below a given integer.
 
-⚠️ **Makes use of [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random), which ISN'T cryptographically secure. You WILL be fired if you misuse this function in an attempt to generate secure, random integers.** ⚠️
+⚠️ **Makes use of [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random), which ISN'T cryptographically secure. You WILL BE FIRED if you misuse this function in an attempt to generate secure, random integers.** ⚠️
 
 #### Parameters
- - **\*** `max` (`Number`): Depending on `includeMax`, the returned integer will be either equal to or below this number.
- - `includeMax` (`Boolean`): Whether or not to include `max` when generating the integer. Default is `false`.
+- **\*** `max` (`Number`): Depending on `includeMax`, the returned integer will be either equal to or below this number.
+- `includeMax` (`Boolean`): Whether or not to include `max` when generating the integer. Default is `false`.
 
 #### Example
 ```javascript
@@ -288,7 +288,7 @@ getPseudoRandomIntBelow(10, true);
 Check if `prefers-reduced-motion` is set to something other than 'reduce'. Returns a `Boolean`.
 
 #### Parameters
- - None
+- None
 
 #### Example
 ``` javascript
@@ -311,7 +311,7 @@ isMotionAllowed();
 Wait for a certain amount of time before continuing script execution.
 
 #### Parameters
- - **\*** `ms` (`Number`): Duration after which script execution will continue.
+- **\*** `ms` (`Number`): Duration after which script execution will continue.
 
 #### Example
 ``` javascript
@@ -341,4 +341,4 @@ So in the worst case, all you need to do is update your imports.
 
 ## License
 
-MIT © [Viktor Chin-Kon-Sung](https://github.com/vikputthiscodeongit)
+MIT © 2023 [Viktor Chin-Kon-Sung](https://github.com/vikputthiscodeongit)
