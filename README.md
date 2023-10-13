@@ -244,7 +244,7 @@ Generate and return a pseudo-random integer below a given integer.
 
 #### Parameters
  - **\*** `max` (`Number`): Depending on `includeMax`, the returned integer will be either equal to or below this number.
- - `includeMax` (`Boolean`): Whether or not to include `max` when generating the integer. Default is `undefined`, which functions as `false`.
+ - `includeMax` (`Boolean`): Whether or not to include `max` when generating the integer. Default is `false`.
 
 #### Example
 ```javascript
