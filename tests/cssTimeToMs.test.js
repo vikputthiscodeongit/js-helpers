@@ -1,4 +1,4 @@
-import cssTimeToMs from "../cssTimeToMs";
+import cssTimeToMs from "../src/cssTimeToMs";
 
 test("Convert 'CSS style time' to milliseconds", () => {
     expect(cssTimeToMs("10ms")).toBe(10);
