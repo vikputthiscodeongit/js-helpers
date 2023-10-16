@@ -326,7 +326,6 @@ In case anyone was actually using any of my previous, now deprecated JavaScript 
 
 * **Functions that already existed haven't undergone breaking changes.** New features may have been added, but these arent't breaking.
 * **Some functions have been renamed.** Each function lives in a seperate file, and each file carries the same name as its function.
-* Typings have been added.
 
 So in the worst case, all you need to do is update your imports.
 
