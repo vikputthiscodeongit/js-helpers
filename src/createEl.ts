@@ -20,4 +20,4 @@ function createEl(tagName: ElTagName, attrs: ElAttrs) {
     return el;
 }
 
-export { createEl as default, ElAttrs, ElTagName };
+export { createEl as default, type ElAttrs, type ElTagName };

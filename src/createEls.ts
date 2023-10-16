@@ -3,11 +3,13 @@ import createEl, { ElAttrs, ElTagName } from "./createEl";
 interface ElSkeletons {
     string: {
         el: ElTagName;
-        attrs: ElAttrs
-    }
+        attrs: ElAttrs;
+    },
 }
 
 function createEls(elSkeletons: ElSkeletons) {
+    debugger;
+
     const createdEls: { [key: string]: HTMLElement } = {};
 
     for (const [name, skeleton] of Object.entries(elSkeletons)) {
