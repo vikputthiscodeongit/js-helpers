@@ -324,8 +324,8 @@ await timeout(3000);
 ## Migrating from `@codebundlesbyvik/js-*-operations`
 In case anyone was actually using any of my previous, now deprecated JavaScript helper packages: here's how to make a smooth transition.
 
-* **Functions that already existed haven't undergone breaking changes.** New features may have been added, but these arent't breaking.
-* **Some functions have been renamed.** Each function lives in a seperate file, and each file carries the same name as its function.
+* **Functions that already existed haven't undergone breaking changes.** New features may have been added, but these aren't breaking.
+* **Some functions have been renamed.** Each function lives in a separate file, and each file carries the same name as its function.
 
 So in the worst case, all you need to do is update your imports.
 
