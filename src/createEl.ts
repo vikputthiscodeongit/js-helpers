@@ -12,7 +12,7 @@ function createEl(tagName: ElTagName, attrs: ElAttrs) {
                 continue;
             }
 
-            const propKebab = prop.replace(/[A-Z]/g, letter => "-" + letter.toLowerCase());
+            const propKebab = prop.replace(/[A-Z]/g, (letter) => "-" + letter.toLowerCase());
             el.setAttribute(propKebab, val);
         }
     }

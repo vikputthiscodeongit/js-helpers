@@ -1,3 +1,4 @@
+import { expect, test } from "jest";
 import cssTimeToMs from "../src/cssTimeToMs";
 
 test("Convert 'CSS style time' to milliseconds", () => {

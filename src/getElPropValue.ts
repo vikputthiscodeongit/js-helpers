@@ -1,6 +1,6 @@
 function getElPropValue(el: Element, prop: string) {
     const elStyles = window.getComputedStyle(el);
-    const propValue = elStyles.getPropertyValue(prop)
+    const propValue = elStyles.getPropertyValue(prop);
 
     return propValue === "" ? null : propValue;
 }
