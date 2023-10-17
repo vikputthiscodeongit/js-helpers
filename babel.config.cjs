@@ -4,10 +4,11 @@ const config = (api) => {
 
     return {
         presets: [
-            // "@babel/preset-typescript",
             [
                 "@babel/preset-env",
                 {
+                    // TODO: Set correct value for targets.
+                    targets: { esmodules: true },
                     useBuiltIns: "usage",
                     corejs: { version: "3.22", proposals: true },
                 },
@@ -15,9 +16,9 @@ const config = (api) => {
             [
                 "minify",
                 {
-                    builtIns: false
-                }
-            ]
+                    builtIns: false,
+                },
+            ],
         ],
     };
 };

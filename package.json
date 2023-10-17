@@ -38,20 +38,21 @@
   "scripts": {
     "js-compile": "tsc",
     "js-transpile": "babel js --out-dir dist",
-    "lint": "eslint --debug",
-    "lint-fix": "eslint --fix",
+    "lint": "eslint . --config .eslintrc.cjs",
+    "lint-fix": "eslint . --config .eslintrc.cjs --fix",
     "make-release": "Bundle everything in /dist, move it to the root, remove /dist & /js afterwards.",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "dependencies": {
+    "core-js": "^3.33.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.0",
     "@babel/core": "^7.23.2",
-    "@babel/eslint-parser": "^7.22.15",
     "@babel/preset-env": "^7.23.2",
-    "@babel/preset-typescript": "^7.23.2",
     "@tsconfig/recommended": "^1.0.3",
-    "@typescript-eslint/eslint-plugin": "^6.7.5",
-    "@typescript-eslint/parser": "^6.7.5",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
     "babel-preset-minify": "^0.5.2",
     "cross-env": "^7.0.3",
     "eslint": "^8.51.0",

@@ -1,2 +1,5 @@
-dist/
-js/
+/*
+!/src
+!/tests
+!*config.*
+!*rc.*
