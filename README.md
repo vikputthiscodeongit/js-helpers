@@ -13,9 +13,9 @@ JavaScript helper functions for various operations, used across my projects.
   - [createEls](#createelselskeletons)
   - [cssTimeToMs](#csstimetomstime)
   - [fetchWithTimeout](#fetchwithtimeout-resource-fetchoptions-timeout-)
+  - [getAverage](#getAveragearray-round)
   - [getCssUnit](#getcssunitvalue)
   - [getElPropValue](#getelpropvalueel-prop)
-  - [getNumberArrayAverage](#getnumberarrayaveragearray-round)
   - [isMotionAllowed](#ismotionallowed)
   - [sleep](#sleepms)
 - [Migrating from `@codebundlesbyvik/js-*-operations`](#migrating-from-codebundlesbyvikjs--operations)
@@ -50,9 +50,9 @@ import * as helpers from "@codebundlesbyvik/js-helpers";
 - [createEls](#createelselskeletons)
 - [cssTimeToMs](#csstimetomstime)
 - [fetchWithTimeout](#fetchwithtimeout-resource-fetchoptions-timeout-)
+- [getAverage](#getAveragearray-round)
 - [getCssUnit](#getcssunitvalue)
 - [getElPropValue](#getelpropvalueel-prop)
-- [getNumberArrayAverage](#getnumberarrayaveragearray-round)
 - [isMotionAllowed](#ismotionallowed)
 - [sleep](#sleepms)
 
@@ -190,6 +190,30 @@ await fetchWithTimeout({
 
 <br>
 
+### `getAverage(array, round)`
+Get the average of an array of `Number`s.
+
+#### Parameters
+- **\*** `array` (`Number[]`): Array to check.
+- `round` (`"floor" | "ceil" | false`): Rounding method to apply to the average. Default is `false`.
+
+#### Example
+``` javascript
+getAverage([1, 2, 3]);
+// 2
+
+getAverage([3, 8, 41, 88, 1024]);
+// 232.8
+
+getAverage([3, 8, 41, 88, 1024], "floor");
+// 232
+
+getAverage([0.1, 0.33, 0.82, 1], "ceil");
+// 1
+```
+
+<br>
+
 ### `getCssUnit(value)`
 Get the unit of a quantitative 'CSS-style' value.
 
@@ -236,30 +260,6 @@ getElPropValue(el, "background-color");
 
 getElPropValue(el, "non-existent");
 // null
-```
-
-<br>
-
-### `getNumberArrayAverage(array, round)`
-Get the average of an array of `Number`s.
-
-#### Parameters
-- **\*** `array` (`Number[]`): Array to check.
-- `round` (`"floor" | "ceil" | false`): Rounding method to apply to the average. Default is `false`.
-
-#### Example
-``` javascript
-getNumberArrayAverage([1, 2, 3]);
-// 2
-
-getNumberArrayAverage([3, 8, 41, 88, 1024]);
-// 232.8
-
-getNumberArrayAverage([3, 8, 41, 88, 1024], "floor");
-// 232
-
-getNumberArrayAverage([0.1, 0.33, 0.82, 1], "ceil");
-// 1
 ```
 
 <br>

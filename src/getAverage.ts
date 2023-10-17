@@ -1,4 +1,4 @@
-function getNumberArrayAverage(array: number[], round: "floor" | "ceil" | false = false) {
+function getAverage(array: number[], round: "floor" | "ceil" | false = false) {
     const average = array.reduce((prev, cur) => prev + cur, 0) / array.length;
 
     switch (round) {
@@ -13,4 +13,4 @@ function getNumberArrayAverage(array: number[], round: "floor" | "ceil" | false 
     }
 }
 
-export { getNumberArrayAverage as default };
+export { getAverage as default };
