@@ -12,6 +12,7 @@ const config = (api) => {
                     corejs: { version: "3.33" },
                 },
             ],
+            ["@babel/preset-typescript"],
             [
                 "minify",
                 {
