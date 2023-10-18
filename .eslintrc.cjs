@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 const config = {
-    // TODO: Set correct values for env.
     env: {
         browser: true,
         es2022: true,

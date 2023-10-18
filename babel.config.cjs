@@ -7,10 +7,9 @@ const config = (api) => {
             [
                 "@babel/preset-env",
                 {
-                    // TODO: Set correct value for targets.
                     targets: { esmodules: true },
                     useBuiltIns: "usage",
-                    corejs: { version: "3.22", proposals: true },
+                    corejs: { version: "3.33" },
                 },
             ],
             [
