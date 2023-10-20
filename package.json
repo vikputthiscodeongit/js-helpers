@@ -33,7 +33,11 @@
   "author": "codebundlesbyvik",
   "repository": "github:vikputthiscodeongit/js-helpers",
   "bugs": "github.com/vikputthiscodeongit/js-helpers/issues",
-  "main": "index.js",
+  "exports": {
+    "./*.js": "./dist/*.js",
+    "module": "./dist/bundles/index.js",
+    "default": "./dist/bundles/index.umd.js"
+  },
   "type": "module",
   "scripts": {
     "compile-js": "rimraf dist && babel src --out-dir dist --extensions .ts",
