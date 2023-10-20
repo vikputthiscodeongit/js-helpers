@@ -9,7 +9,7 @@ function getCssUnit(value?: string) {
 
     while (i--) {
         if (!isNaN(parseInt(value[i]))) {
-            return value.slice(i + 1, length);
+            return value.slice(i + 1, length) || null;
         }
     }
 
