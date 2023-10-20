@@ -39,9 +39,9 @@
     "compile-js": "rimraf dist && babel src --out-dir dist --extensions .ts",
     "generate-types": "tsc",
     "make-release": "Bundle everything in /dist, move it to the root, remove /dist & /js afterwards.",
-    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
     "lint": "eslint * src/** tests/** --config .eslintrc.cjs",
     "lint-fix": "eslint * src/** tests/** --config .eslintrc.cjs --fix",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config=jest.config.cjs"
   },
   "dependencies": {
     "core-js": "^3.33.0"
@@ -64,7 +64,5 @@
     "rimraf": "^5.0.5",
     "typescript": "^5.2.2"
   },
-  "jest": {
-    "transform": {}
   }
 }

@@ -1,4 +1,4 @@
-import { expect, test } from "jest";
+import { expect, test } from "@jest/globals";
 import getCssUnit from "../src/getCssUnit";
 
 test("Get 'CSS style time' unit", () => {
