@@ -38,10 +38,10 @@
   "scripts": {
     "compile-js": "rimraf dist && babel src --out-dir dist --extensions .ts",
     "generate-types": "tsc",
-    "make-release": "Bundle everything in /dist, move it to the root, remove /dist & /js afterwards.",
     "lint": "eslint * src/** tests/** --config .eslintrc.cjs",
     "lint-fix": "eslint * src/** tests/** --config .eslintrc.cjs --fix",
     "make-bundle-umd": "rollup --input dist/index.js --file dist/index.umd.js --format umd --name cbbvJsHelpers",
+    "make-release": "npm run lint-fix && npm run test && npm run compile-js && npm run generate-types && npm run make-bundle-umd",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config=jest.config.cjs"
   },
   "dependencies": {
