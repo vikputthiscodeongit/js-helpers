@@ -36,7 +36,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "compile-js": "babel src --out-dir dist --extensions .ts",
+    "compile-js": "rimraf dist && babel src --out-dir dist --extensions .ts",
     "generate-types": "tsc",
     "lint": "eslint . --config .eslintrc.cjs",
     "lint-fix": "eslint . --config .eslintrc.cjs --fix",
@@ -61,6 +61,7 @@
     "eslint-plugin-prettier": "^5.0.1",
     "jest": "^29.7.0",
     "prettier": "^3.0.3",
+    "rimraf": "^5.0.5",
     "typescript": "^5.2.2"
   },
   "jest": {
