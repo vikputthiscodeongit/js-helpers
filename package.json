@@ -38,10 +38,10 @@
   "scripts": {
     "compile-js": "rimraf dist && babel src --out-dir dist --extensions .ts",
     "generate-types": "tsc",
-    "lint": "eslint . --config .eslintrc.cjs",
-    "lint-fix": "eslint . --config .eslintrc.cjs --fix",
     "make-release": "Bundle everything in /dist, move it to the root, remove /dist & /js afterwards.",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
+    "lint": "eslint * src/** tests/** --config .eslintrc.cjs",
+    "lint-fix": "eslint * src/** tests/** --config .eslintrc.cjs --fix",
   },
   "dependencies": {
     "core-js": "^3.33.0"
