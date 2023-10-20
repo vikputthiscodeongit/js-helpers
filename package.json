@@ -45,7 +45,7 @@
     "lint": "eslint * src/** tests/** --config .eslintrc.cjs",
     "lint-fix": "eslint * src/** tests/** --config .eslintrc.cjs --fix",
     "make-bundle-umd": "rollup --input dist/index.js --file dist/index.umd.js --format umd --name cbbvJsHelpers",
-    "make-release": "npm run lint-fix && npm run test && npm run compile-js && npm run generate-types && npm run make-bundle-umd",
+    "make-release": "npm run lint-fix && npm run test && npm run compile-js && npm run make-bundle-umd && npm run generate-types",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config=jest.config.cjs"
   },
   "dependencies": {
