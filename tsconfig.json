@@ -12,5 +12,5 @@
         "emitDeclarationOnly": true,
         "isolatedModules": true
     },
-    "include": ["dist/**/*"]
+    "include": ["dist/*"]
 }
