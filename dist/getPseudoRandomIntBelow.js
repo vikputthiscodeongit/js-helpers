@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=getPseudoRandomIntBelow;function getPseudoRandomIntBelow(a){var b=!!(1<arguments.length&&arguments[1]!==void 0)&&arguments[1],c=b?0:1;return Math.floor(Math.random()*(a-c))}

@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=getAverage,require("core-js/modules/es.array.reduce.js");function getAverage(a){var b=!!(1<arguments.length&&arguments[1]!==void 0)&&arguments[1],c=a.reduce((a,b)=>a+b,0)/a.length;return"floor"===b?Math.floor(c):"ceil"===b?Math.ceil(c):c}
