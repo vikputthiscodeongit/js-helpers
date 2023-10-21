@@ -8,7 +8,7 @@ function getCssUnit(value?: string) {
     let i = length;
 
     while (i--) {
-        if (!isNaN(parseInt(value[i]))) {
+        if (!Number.isNaN(Number.parseInt(value[i]))) {
             return value.slice(i + 1, length) || null;
         }
     }

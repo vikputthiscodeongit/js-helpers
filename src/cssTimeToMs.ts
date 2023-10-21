@@ -1,7 +1,7 @@
 import getCssUnit from "./getCssUnit";
 
 function cssTimeToMs(time: string) {
-    const timeAsNumber = parseFloat(time);
+    const timeAsNumber = Number.parseFloat(time);
 
     switch (getCssUnit(time)) {
         case null:
