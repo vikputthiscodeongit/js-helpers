@@ -44,8 +44,8 @@
     "generate-types": "tsc",
     "lint": "eslint * src/** tests/** --config .eslintrc.cjs",
     "lint-fix": "eslint * src/** tests/** --config .eslintrc.cjs --fix",
-    "make-bundle-umd": "rollup --input dist/index.js --file dist/index.umd.js --format umd --name cbbvJsHelpers",
     "make-release": "npm run lint-fix && npm run test && npm run compile-js && npm run make-bundle-umd && npm run generate-types",
+    "make-bundle": "rollup --config rollup.config.js",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config=jest.config.cjs"
   },
   "dependencies": {
@@ -56,6 +56,8 @@
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-typescript": "^7.23.2",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@tsconfig/recommended": "^1.0.3",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
