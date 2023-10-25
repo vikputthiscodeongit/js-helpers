@@ -44,8 +44,8 @@
     "generate-types": "tsc",
     "lint": "eslint * src/** tests/** --config .eslintrc.cjs",
     "lint-fix": "eslint * src/** tests/** --config .eslintrc.cjs --fix",
-    "make-release": "npm run lint-fix && npm run test && npm run compile-js && npm run make-bundle-umd && npm run generate-types",
     "make-bundle": "rollup --config rollup.config.js",
+    "make-release": "npm run lint-fix && npm run test && npm run compile-js && npm run make-bundle && npm run minify && npm run generate-types",
     "minify": "node terser.config.cjs",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config=jest.config.cjs"
   },
