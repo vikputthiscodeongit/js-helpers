@@ -1,4 +1,3 @@
-export const __esModule: boolean;
-export default getElPropValue;
-declare function getElPropValue(a: any, b: any): string | null;
+export { getElPropValue as default };
+declare function getElPropValue(e: any, t: any): string | null;
 //# sourceMappingURL=getElPropValue.d.ts.map

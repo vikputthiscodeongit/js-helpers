@@ -1,4 +1,3 @@
-export const __esModule: boolean;
-export default getCssUnit;
-declare function getCssUnit(a: any): any;
+export { getCssUnit as default };
+declare function getCssUnit(r: any): any;
 //# sourceMappingURL=getCssUnit.d.ts.map

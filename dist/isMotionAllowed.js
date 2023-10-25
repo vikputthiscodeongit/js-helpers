@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=isMotionAllowed;function isMotionAllowed(){return!window.matchMedia("(prefers-reduced-motion: reduce)").matches}
+function isMotionAllowed(){return!window.matchMedia("(prefers-reduced-motion: reduce)").matches}export{isMotionAllowed as default};

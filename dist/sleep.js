@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=sleep,require("core-js/modules/es.promise.js");function sleep(a){return new Promise(b=>setTimeout(b,a))}
+import"core-js/modules/es.promise.js";function sleep(e){return new Promise((s=>setTimeout(s,e)))}export{sleep as default};

@@ -1,4 +1,3 @@
-export const __esModule: boolean;
-export default sleep;
-declare function sleep(a: any): Promise<any>;
+export { sleep as default };
+declare function sleep(e: any): Promise<any>;
 //# sourceMappingURL=sleep.d.ts.map

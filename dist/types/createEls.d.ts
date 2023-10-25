@@ -1,4 +1,3 @@
-export const __esModule: boolean;
-export default createEls;
-declare function createEls(a: any): {};
+export { createEls as default };
+declare function createEls(e: any): {};
 //# sourceMappingURL=createEls.d.ts.map

@@ -1,4 +1,3 @@
-export const __esModule: boolean;
-export default fetchWithTimeout;
-declare function fetchWithTimeout(...args: any[]): any;
+export { fetchWithTimeout as default };
+declare function fetchWithTimeout(e: any, ...args: any[]): Promise<any>;
 //# sourceMappingURL=fetchWithTimeout.d.ts.map

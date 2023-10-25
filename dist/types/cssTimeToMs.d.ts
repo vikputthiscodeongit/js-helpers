@@ -1,4 +1,3 @@
-export const __esModule: boolean;
-export default cssTimeToMs;
-declare function cssTimeToMs(a: any): number | null;
+export { cssTimeToMs as default };
+declare function cssTimeToMs(e: any): number | null;
 //# sourceMappingURL=cssTimeToMs.d.ts.map

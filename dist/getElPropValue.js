@@ -1,1 +1,1 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=getElPropValue;function getElPropValue(a,b){var c=window.getComputedStyle(a),d=c.getPropertyValue(b);return""===d?null:d}
+function getElPropValue(e,t){var l=window.getComputedStyle(e).getPropertyValue(t);return""===l?null:l}export{getElPropValue as default};
