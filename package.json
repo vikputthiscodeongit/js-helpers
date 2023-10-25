@@ -46,6 +46,7 @@
     "lint-fix": "eslint * src/** tests/** --config .eslintrc.cjs --fix",
     "make-release": "npm run lint-fix && npm run test && npm run compile-js && npm run make-bundle-umd && npm run generate-types",
     "make-bundle": "rollup --config rollup.config.js",
+    "minify": "node terser.config.cjs",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config=jest.config.cjs"
   },
   "dependencies": {
@@ -61,7 +62,6 @@
     "@tsconfig/recommended": "^1.0.3",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
-    "babel-preset-minify": "^0.5.2",
     "cross-env": "^7.0.3",
     "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
@@ -70,6 +70,7 @@
     "prettier": "^3.0.3",
     "rimraf": "^5.0.5",
     "rollup": "^4.1.4",
+    "terser": "^5.22.0",
     "typescript": "^5.2.2"
   },
   "engines": {

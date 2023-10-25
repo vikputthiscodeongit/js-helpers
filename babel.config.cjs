@@ -14,12 +14,6 @@ const config = (api) => {
                 },
             ],
             ["@babel/preset-typescript"],
-            [
-                "minify",
-                {
-                    builtIns: false,
-                },
-            ],
         ],
     };
 };
