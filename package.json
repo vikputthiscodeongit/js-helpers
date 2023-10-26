@@ -31,6 +31,9 @@
   ],
   "license": "MIT",
   "author": "codebundlesbyvik",
+  "files": [
+    "dist/**/*"
+  ],
   "repository": "github:vikputthiscodeongit/js-helpers",
   "bugs": "github.com/vikputthiscodeongit/js-helpers/issues",
   "exports": {
