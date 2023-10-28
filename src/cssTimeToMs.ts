@@ -1,4 +1,4 @@
-import getCssUnit from "./getCssUnit";
+import getCssUnit from "./getCssUnit.ts";
 
 function cssTimeToMs(time: string) {
     const timeAsNumber = Number.parseFloat(time);

@@ -13,7 +13,12 @@ const config = (api) => {
                     corejs: { version: "3.33" },
                 },
             ],
-            ["@babel/preset-typescript"],
+            [
+                "@babel/preset-typescript",
+                {
+                    rewriteImportExtensions: true,
+                },
+            ],
         ],
     };
 };

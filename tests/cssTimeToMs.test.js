@@ -1,5 +1,5 @@
 import { expect, test } from "@jest/globals";
-import cssTimeToMs from "../src/cssTimeToMs";
+import cssTimeToMs from "../src/cssTimeToMs.ts";
 
 test("Convert 'CSS style time' to milliseconds", () => {
     expect(cssTimeToMs("10ms")).toBe(10);

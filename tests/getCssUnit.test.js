@@ -1,5 +1,5 @@
 import { expect, test } from "@jest/globals";
-import getCssUnit from "../src/getCssUnit";
+import getCssUnit from "../src/getCssUnit.ts";
 
 test("Get 'CSS style time' unit", () => {
     expect(getCssUnit("1px")).toBe("px");
