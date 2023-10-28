@@ -1,1 +1,25 @@
-import"core-js/modules/es.number.parse-float.js";import getCssUnit from"./getCssUnit";function cssTimeToMs(e){var s=Number.parseFloat(e);switch(getCssUnit(e)){case null:case"ms":return s;case"s":return 1e3*s;case"m":return 6e4*s;case"h":return 36e5*s;case"d":return 864e5*s;case"w":return 6048e5*s;case"y":return 31536e6*s;default:return null}}export{cssTimeToMs as default};
+import "core-js/modules/es.number.parse-float.js";
+import getCssUnit from "./getCssUnit.js";
+function cssTimeToMs(time) {
+  var timeAsNumber = Number.parseFloat(time);
+  switch (getCssUnit(time)) {
+    case null:
+    case "ms":
+      return timeAsNumber;
+    case "s":
+      return timeAsNumber * 1000;
+    case "m":
+      return timeAsNumber * 60000;
+    case "h":
+      return timeAsNumber * 3600000;
+    case "d":
+      return timeAsNumber * 86400000;
+    case "w":
+      return timeAsNumber * 604800000;
+    case "y":
+      return timeAsNumber * 31536000000;
+    default:
+      return null;
+  }
+}
+export { cssTimeToMs as default };

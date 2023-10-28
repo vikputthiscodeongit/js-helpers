@@ -1,1 +1,0 @@
-//# sourceMappingURL=index.umd.d.ts.map

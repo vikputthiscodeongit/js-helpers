@@ -1,3 +1,3 @@
 export { createEls as default };
-declare function createEls(e: any): {};
+declare function createEls(elSkeletons: any): {};
 //# sourceMappingURL=createEls.d.ts.map
