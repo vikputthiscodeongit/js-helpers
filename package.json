@@ -38,8 +38,9 @@
   "bugs": "github.com/vikputthiscodeongit/js-helpers/issues",
   "exports": {
     ".": {
-        "module": "./dist/index.js",
-        "default": "./dist/index.umd.js"
+      "types": "./dist/types/index.d.ts",
+      "module": "./dist/index.js",
+      "default": "./dist/index.umd.js"
     }
   },
   "type": "module",
