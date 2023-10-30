@@ -48,5 +48,6 @@ const options = {
         ecma: 5,
         passes: 2,
     },
+    mangle: false,
 };
 minifyFiles(files, options).then((r) => r);
