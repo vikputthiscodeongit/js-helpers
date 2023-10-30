@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 const config = {
-    extensionsToTreatAsEsm: [".ts"],
+    preset: "ts-jest",
 };
 
 module.exports = config;
