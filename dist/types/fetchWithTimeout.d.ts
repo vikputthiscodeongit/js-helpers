@@ -1,3 +1,6 @@
+type Resource = RequestInfo | URL;
+type FetchOptions = RequestInit;
+type Timeout = number;
+declare function fetchWithTimeout(resource: Resource, fetchOptions?: FetchOptions | undefined, timeout?: Timeout | undefined): Promise<Response>;
 export { fetchWithTimeout as default };
-declare function fetchWithTimeout(_x: any, ...args: any[]): Promise<any>;
 //# sourceMappingURL=fetchWithTimeout.d.ts.map

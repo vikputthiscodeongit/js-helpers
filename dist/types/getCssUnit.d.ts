@@ -1,3 +1,3 @@
+declare function getCssUnit(value?: string | undefined): string | null;
 export { getCssUnit as default };
-declare function getCssUnit(value: any): any;
 //# sourceMappingURL=getCssUnit.d.ts.map

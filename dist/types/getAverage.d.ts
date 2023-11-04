@@ -1,3 +1,3 @@
+declare function getAverage(array: number[], round?: false | "floor" | "ceil" | undefined): number;
 export { getAverage as default };
-declare function getAverage(array: any, ...args: any[]): number;
 //# sourceMappingURL=getAverage.d.ts.map

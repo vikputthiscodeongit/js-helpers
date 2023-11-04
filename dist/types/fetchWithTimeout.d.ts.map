@@ -1,1 +1,1 @@
-{"version":3,"file":"fetchWithTimeout.d.ts","sourceRoot":"","sources":["../fetchWithTimeout.js"],"names":[],"mappings":";AAAi7D,yEAA6E"}
+{"version":3,"file":"fetchWithTimeout.d.ts","sourceRoot":"","sources":["../../src/fetchWithTimeout.ts"],"names":[],"mappings":"AAAA,KAAK,QAAQ,GAAG,WAAW,GAAG,GAAG,CAAC;AAClC,KAAK,YAAY,GAAG,WAAW,CAAC;AAChC,KAAK,OAAO,GAAG,MAAM,CAAC;AAEtB,iBAAe,gBAAgB,CAC3B,QAAQ,EAAE,QAAQ,EAClB,YAAY,CAAC,EAAE,YAAY,GAAG,SAAS,EACvC,OAAO,CAAC,EAAE,OAAO,GAAG,SAAS,qBAYhC;AAED,OAAO,EAAE,gBAAgB,IAAI,OAAO,EAAE,CAAC"}
