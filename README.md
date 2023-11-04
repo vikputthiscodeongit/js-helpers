@@ -17,7 +17,7 @@ JavaScript helper functions for various operations, used across my projects.
   - [getCssUnit](#getcssunitvalue)
   - [getElPropValue](#getelpropvalueel-prop)
   - [isMotionAllowed](#ismotionallowed)
-  - [sleep](#sleepms)
+  - [wait](#waitms)
 - [Migrating from `@codebundlesbyvik/js-*-operations`](#migrating-from-codebundlesbyvikjs--operations)
   - [Renamed functions](#renamed-functions)
 - [License](#license)
@@ -307,7 +307,7 @@ isMotionAllowed();
 
 <br>
 
-### `sleep(ms)`
+### `wait(ms)`
 Wait for a certain amount of time before continuing script execution.
 
 #### Parameters
@@ -316,7 +316,7 @@ Wait for a certain amount of time before continuing script execution.
 #### Example
 ``` javascript
 // Wait for 3 seconds before doing something else.
-await timeout(3000);
+await wait(3000);
 ```
 
 <br>
