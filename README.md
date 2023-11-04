@@ -20,7 +20,17 @@ JavaScript helper functions for various operations, used across my projects.
 - [Migrating from `@codebundlesbyvik/js-*-operations`](#migrating-from-codebundlesbyvikjs--operations)
   - [Renamed functions](#renamed-functions)
 - [License](#license)
+* [Compatibility](#compatibility)
   * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
+
+<br>
+
+## Compatibility
+The distributables are compiled with the following `browserslist`:
+```
+"> 0.1% and fully supports object-entries"
+```
+Practically speaking, all popular browser versions released after H2 2016 are supported.
 
 <br>
 
