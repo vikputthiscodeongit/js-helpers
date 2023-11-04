@@ -7,21 +7,21 @@ JavaScript helper functions for various operations, used across my projects.
 <br>
 
 ## Table of Contents
-- [Installation](#installation)
-- [Functions](#functions)
-  - [createEl](#createeltagname-attrs)
-  - [createEls](#createelselskeletons)
-  - [cssTimeToMs](#csstimetomstime)
-  - [getAverage](#getAveragearray-round)
-  - [getCssUnit](#getcssunitvalue)
-  - [getElPropValue](#getelpropvalueel-prop)
-  - [isMotionAllowed](#ismotionallowed)
-  - [wait](#waitms)
-- [Migrating from `@codebundlesbyvik/js-*-operations`](#migrating-from-codebundlesbyvikjs--operations)
-  - [Renamed functions](#renamed-functions)
-- [License](#license)
 * [Compatibility](#compatibility)
+* [Installation](#installation)
+* [Functions](#functions)
+  * [createEl](#createeltagname*attrs)
+  * [createEls](#createelselskeletons)
+  * [cssTimeToMs](#csstimetomstime)
   * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
+  * [getAverage](#getaveragearray-round)
+  * [getCssUnit](#getcssunitvalue)
+  * [getElPropValue](#getelpropvalueel-prop)
+  * [isMotionAllowed](#ismotionallowed)
+  * [wait](#waitms)
+* [Migrating from `@codebundlesbyvik/js-*-operations`](#migrating-from-codebundlesbyvikjs--operations)
+  * [Renamed functions](#renamed-functions)
+* [License](#license)
 
 <br>
 
@@ -70,17 +70,20 @@ If you use the module files then you'll need to include the required [`core-js` 
 <br>
 
 ## Functions
-- [createEl](#createeltagname-attrs)
-- [createEls](#createelselskeletons)
-- [cssTimeToMs](#csstimetomstime)
-- [getAverage](#getAveragearray-round)
-- [getCssUnit](#getcssunitvalue)
-- [getElPropValue](#getelpropvalueel-prop)
-- [isMotionAllowed](#ismotionallowed)
-- [sleep](#sleepms)
-
-**\*** indicates a required parameter.
+* [createEl](#createeltagname*attrs)
+* [createEls](#createelselskeletons)
+* [cssTimeToMs](#csstimetomstime)
 * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
+* [getAverage](#getaveragearray-round)
+* [getCssUnit](#getcssunitvalue)
+* [getElPropValue](#getelpropvalueel-prop)
+* [isMotionAllowed](#ismotionallowed)
+* [wait](#waitms)
+
+<br>
+
+* Required parameters are indicated with **\***.
+* Default values for required parameters are listed first in the array of accepted parameter value types.
 
 <br>
 
@@ -115,7 +118,7 @@ createEl("div", ATTRS);
 Create and return an object of `HTMLElement`s.
 
 #### Parameters
-- **\*** `elSkeletons` (`Object`): An object that consists of multiple [createEl](#createeltagname-attrs) `tagName` / `attrs` entries.
+* **\*** `elSkeletons` (`Object`): An object that consists of multiple [createEl](#createeltagname-attrs) `tagName` / `attrs` entries.
 
 #### Example
 ```javascript
@@ -163,15 +166,15 @@ Convert a 'CSS-style time' to a `Number` of milliseconds.
 If the given value is unitless, it'll be returned as-is. If it has an unrecognized unit, the returned value will be `null`.
 
 #### Parameters
-- `time` (`String`): 'CSS-style' time duration.
+* `time` (`String`): 'CSS-style' time duration.
 
 #### Supported units
-- `ms`: Milliseconds
-- `s`: Seconds
-- `h`: Hours
-- `d`: Days
-- `w`: Weeks
-- `y`: Years - **assumes 1 year = 365 days**
+* `ms`: Milliseconds
+* `s`: Seconds
+* `h`: Hours
+* `d`: Days
+* `w`: Weeks
+* `y`: Years - **assumes 1 year = 365 days**
 
 #### Example
 ``` javascript
@@ -239,7 +242,7 @@ Get the unit of a quantitative 'CSS-style' value.
 If the given value has no unit, the returned value will be `null`.
 
 #### Parameters
-- `value` (`String`): 'CSS-style' value to get the unit from.
+* `value` (`String`): 'CSS-style' value to get the unit from.
 
 #### Example
 ``` javascript
@@ -261,8 +264,8 @@ Get an `Element`'s CSS property value.
 If the given property is not set, the returned value will be `null`.
 
 #### Parameters
-- **\*** `el` (`Element`): The target.
-- **\*** `prop` (`String`): `Element` property to retrieve.
+* **\*** `el` (`Element`): The target.
+* **\*** `prop` (`String`): `Element` property to retrieve.
 
 #### Example
 ``` javascript
@@ -330,7 +333,7 @@ isMotionAllowed();
 Wait for a certain amount of time before continuing script execution.
 
 #### Parameters
-- **\*** `ms` (`Number`): Duration after which script execution will continue.
+* **\*** `ms` (`Number`): Duration after which script execution will continue.
 
 #### Example
 ``` javascript
@@ -359,5 +362,4 @@ So in the worst case, all you need to do is update your imports.
 <br>
 
 ## License
-
 MIT © 2023 [Viktor Chin-Kon-Sung](https://github.com/vikputthiscodeongit)
