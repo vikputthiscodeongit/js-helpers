@@ -7,7 +7,6 @@ const config = (api) => {
             [
                 "@babel/preset-env",
                 {
-                    targets: { esmodules: true },
                     modules: false,
                     useBuiltIns: "usage",
                     corejs: { version: "3.33" },

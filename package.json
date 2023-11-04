@@ -81,5 +81,8 @@
   },
   "engines": {
     "node": ">=12.22.0"
-  }
+  },
+  "browserslist": [
+    "> 0.1% and fully supports object-entries"
+  ]
 }
