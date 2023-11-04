@@ -203,8 +203,8 @@ await fetchWithTimeout("target-resource-url", { method: "GET" }, 10000);
 Get the average of an array of `Number`s.
 
 #### Parameters
-- **\*** `array` (`Number[]`): Array to check.
-- `round` (`"floor" | "ceil" | false`): Rounding method to apply to the average. Default is `false`.
+* **\*** `array` (`Number[]`): Array to check.
+* `round` (`false | "floor" | "ceil"`): Rounding method to apply to the average.
 
 #### Example
 ``` javascript
@@ -279,8 +279,8 @@ Generate and return a pseudo-random integer below a given integer.
 ⚠️ **Makes use of [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random), which ISN'T cryptographically secure. You WILL BE FIRED if you misuse this function in an attempt to generate secure, random integers.** ⚠️
 
 #### Parameters
-- **\*** `max` (`Number`): Depending on `includeMax`, the returned integer will be either equal to or below this number.
-- `includeMax` (`Boolean`): Whether or not to include `max` when generating the integer. Default is `false`.
+* **\*** `max` (`Number`): Depending on `includeMax`, the returned integer will be either equal to or below this number.
+* `includeMax` (`false | Boolean`): Whether or not to include `max` when generating the integer.
 
 #### Example
 ```javascript
