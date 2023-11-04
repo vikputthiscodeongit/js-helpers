@@ -1,7 +1,7 @@
-type ElAttrs = { [key: string]: string } | undefined;
+type ElAttrs = { [key: string]: string };
 type ElTagName = string;
 
-function createEl(tagName: ElTagName, attrs: ElAttrs) {
+function createEl(tagName: ElTagName, attrs?: ElAttrs | undefined) {
     const el = document.createElement(tagName);
 
     if (attrs) {

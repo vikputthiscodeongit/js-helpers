@@ -1,4 +1,4 @@
-function getCssUnit(value?: string) {
+function getCssUnit(value?: string | undefined) {
     if (!value) return null;
 
     const length = value.length;

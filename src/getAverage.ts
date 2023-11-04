@@ -1,4 +1,8 @@
-function getAverage(array: number[], round: "floor" | "ceil" | false = false) {
+function getAverage(array: number[], round?: false | "floor" | "ceil" | undefined) {
+    if (!round) {
+        round = false;
+    }
+
     const average = array.reduce((prev, cur) => prev + cur, 0) / array.length;
 
     switch (round) {
