@@ -12,7 +12,6 @@ JavaScript helper functions for various operations, used across my projects.
   - [createEl](#createeltagname-attrs)
   - [createEls](#createelselskeletons)
   - [cssTimeToMs](#csstimetomstime)
-  - [fetchWithTimeout](#fetchwithtimeout-resource-fetchoptions-timeout-)
   - [getAverage](#getAveragearray-round)
   - [getCssUnit](#getcssunitvalue)
   - [getElPropValue](#getelpropvalueel-prop)
@@ -21,6 +20,7 @@ JavaScript helper functions for various operations, used across my projects.
 - [Migrating from `@codebundlesbyvik/js-*-operations`](#migrating-from-codebundlesbyvikjs--operations)
   - [Renamed functions](#renamed-functions)
 - [License](#license)
+  * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
 
 <br>
 
@@ -49,7 +49,6 @@ import * as helpers from "@codebundlesbyvik/js-helpers";
 - [createEl](#createeltagname-attrs)
 - [createEls](#createelselskeletons)
 - [cssTimeToMs](#csstimetomstime)
-- [fetchWithTimeout](#fetchwithtimeout-resource-fetchoptions-timeout-)
 - [getAverage](#getAveragearray-round)
 - [getCssUnit](#getcssunitvalue)
 - [getElPropValue](#getelpropvalueel-prop)
@@ -57,6 +56,7 @@ import * as helpers from "@codebundlesbyvik/js-helpers";
 - [sleep](#sleepms)
 
 **\*** indicates a required parameter.
+* [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
 
 <br>
 
@@ -167,25 +167,18 @@ cssTimeToMs("20");
 
 <br>
 
-### `fetchWithTimeout({ resource, fetchOptions, timeout })`
+### `fetchWithTimeout(resource, fetchOptions, timeout)`
 Make a `fetch()` call that's aborted by an `AbortController` after a given amount of time.
 
 #### Parameters
-A single object, containing:
-- **\*** `resource` (`RequestInfo | URL`): Location of the resource.
-- `fetchOptions` (`RequestInit`): [Options accepted by `fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/fetch#options).
-- `timeout` (`Number`): Time in milliseconds after which `AbortController.abort()` is called and the `fetch()` is aborted. Default is `8000`.
+* **\*** `resource` (`RequestInfo | URL`): Location of the resource.
+* `fetchOptions` (`{} | RequestInit`): [Options accepted by `fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/fetch#options).
+* `timeout` (`8000 | Number`): Time in milliseconds after which `AbortController.abort()` is called and the `fetch()` is aborted.
 
 #### Example
 ``` javascript
-// Make a GET request that's canceled if no response is returned within 10 seconds.
-await fetchWithTimeout({
-    resource: "target-resource-url",
-    fetchOptions: {
-        method: "GET"
-    },
-    timeout: 10000
-});
+// Make a GET request that's aborted if no response is returned within 10 seconds.
+await fetchWithTimeout("target-resource-url", { method: "GET" }, 10000);
 ```
 
 <br>

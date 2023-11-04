@@ -1,16 +1,14 @@
-interface FetchWithTimeoutOptions {
-    resource: RequestInfo | URL;
-    fetchOptions?: RequestInit;
-    timeout?: number;
-}
+type Resource = RequestInfo | URL;
+type FetchOptions = RequestInit;
+type Timeout = number;
 
-async function fetchWithTimeout({
-    resource,
-    fetchOptions,
-    timeout = 8000,
-}: FetchWithTimeoutOptions) {
+async function fetchWithTimeout(
+    resource: Resource,
+    fetchOptions?: FetchOptions | undefined,
+    timeout?: Timeout | undefined,
+) {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), timeout);
+    const timeoutId = setTimeout(() => controller.abort(), timeout || 8000);
 
     const response = await fetch(resource, {
         ...(fetchOptions || {}),
