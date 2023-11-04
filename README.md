@@ -64,8 +64,10 @@ import * as helpers from "@codebundlesbyvik/js-helpers";
 Create and return an `HTMLElement`.
 
 #### Parameters
-- **\*** `tagName` (`String`): The `HTMLElement`'s tag name.
-- `attrs` (`Object`): Individual property - value pairs to add to the `HTMLElement`.
+* **\*** `tagName` (`String`): The `HTMLElement`'s tag name.
+* `attrs` (`Object`): Individual attribute - value pairs to set on the `HTMLElement`.
+
+Special case is the `text` attribute. Use it to set the `HTMLElement`'s `textContent`.
 
 #### Example
 ```javascript

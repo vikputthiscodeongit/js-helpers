@@ -7,7 +7,7 @@ function createEl(tagName: ElTagName, attrs: ElAttrs) {
     if (attrs) {
         for (const [prop, val] of Object.entries(attrs)) {
             if (prop === "text") {
-                el.innerText = val;
+                el.textContent = val;
 
                 continue;
             }
