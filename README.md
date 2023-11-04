@@ -25,23 +25,37 @@ JavaScript helper functions for various operations, used across my projects.
 <br>
 
 ## Installation
-Install package from npm
+### Usage within the Node.js ecosystem
+Install the package from npm
 
 ``` shell
 npm install @codebundlesbyvik/js-helpers
 ```
 
-<br>
-
 Import the helpers you need...
+
 ``` javascript
 import { getElPropValue, isMotionAllowed } from "@codebundlesbyvik/js-helpers";
 ```
 
-...or import the entire UMD bundle.
+...or import the bundle in its entirety.
+
 ``` javascript
 import * as helpers from "@codebundlesbyvik/js-helpers";
 ```
+
+<br>
+
+### Standalone usage
+[Download the latest release from GitHub](https://github.com/vikputthiscodeongit/js-helpers/releases/latest).
+
+Then you can either:
+* Use the UMD bundle, or
+* Import the helpers you need from the index file, or
+* Import the helpers you need seperately.
+
+The UMD bundle has the required `core-js` polyfills inlined.<br>
+If you use the module files then you'll need to include the required [`core-js` polyfills](https://github.com/zloirock/core-js/releases/latest) yourself. These are loaded from a subdirectory `corejs/modules`, whose location should be relative to the directory where the `js-helpers` files are stored.
 
 <br>
 
