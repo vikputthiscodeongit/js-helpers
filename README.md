@@ -10,7 +10,7 @@ JavaScript helper functions for various operations, used across my projects.
 * [Compatibility](#compatibility)
 * [Installation](#installation)
 * [Functions](#functions)
-  * [createEl](#createeltagname*attrs)
+  * [createEl](#createeltagname-attrs)
   * [createEls](#createelselskeletons)
   * [cssTimeToMs](#csstimetomstime)
   * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
@@ -36,7 +36,7 @@ Practically speaking, all popular browser versions released after H2 2016 are su
 
 ## Installation
 ### Usage within the Node.js ecosystem
-Install the package from npm
+Install the package with npm.
 
 ``` shell
 npm install @codebundlesbyvik/js-helpers
@@ -70,7 +70,7 @@ If you use the module files then you'll need to include the required [`core-js` 
 <br>
 
 ## Functions
-* [createEl](#createeltagname*attrs)
+* [createEl](#createeltagname-attrs)
 * [createEls](#createelselskeletons)
 * [cssTimeToMs](#csstimetomstime)
 * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
