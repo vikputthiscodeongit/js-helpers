@@ -1,0 +1,93 @@
+{
+  "name": "@codebundlesbyvik/js-helpers",
+  "version": "1.0.0",
+  "description": "JavaScript helper functions for various operations.",
+  "keywords": [
+    "es6",
+    "typescript",
+    "ts",
+    "helpers",
+    "lightweight",
+    "css",
+    "create",
+    "fetch",
+    "get",
+    "strip",
+    "dom",
+    "element",
+    "number",
+    "int",
+    "prop",
+    "value",
+    "unit",
+    "average",
+    "duration",
+    "milliseconds",
+    "ms",
+    "motion",
+    "promise",
+    "time",
+    "timeout",
+    "sleep",
+    "wait"
+  ],
+  "license": "MIT",
+  "author": "codebundlesbyvik",
+  "files": [
+    "dist/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "repository": "git+https://github.com/vikputthiscodeongit/js-helpers.git"
+  },
+  "bugs": "https://github.com/vikputthiscodeongit/js-helpers/issues",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "module": "./dist/index.js",
+      "default": "./dist/index.umd.js"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "compile-js": "babel src --out-dir dist --extensions .ts",
+    "generate-types": "tsc",
+    "lint": "eslint * src/** tests/** --config .eslintrc.cjs",
+    "lint-fix": "eslint * src/** tests/** --config .eslintrc.cjs --fix",
+    "make-bundle": "rollup --config rollup.config.js",
+    "make-release": "cross-env NODE_ENV=production npm run lint-fix && npm run test && rimraf dist && npm run generate-types && npm run compile-js && npm run make-bundle && npm run minify",
+    "minify": "node terser.config.cjs",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config=jest.config.cjs"
+  },
+  "dependencies": {
+    "core-js": "^3.33.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-typescript": "^7.23.2",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@tsconfig/recommended": "^1.0.3",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.53.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "jest": "^29.7.0",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.3.0",
+    "terser": "^5.24.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=12.22.0"
+  },
+  "browserslist": [
+    "> 0.1% and fully supports object-entries"
+  ]
+}

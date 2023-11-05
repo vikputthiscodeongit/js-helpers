@@ -1,0 +1,1 @@
+async function fetchWithTimeout(resource,fetchOptions,timeout){const controller=new AbortController,timeoutId=setTimeout((()=>controller.abort()),timeout||8e3),response=await fetch(resource,{...fetchOptions||{},signal:controller.signal});return clearTimeout(timeoutId),response}export{fetchWithTimeout as default};
