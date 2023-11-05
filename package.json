@@ -36,8 +36,11 @@
   "files": [
     "dist/**/*"
   ],
-  "repository": "github:vikputthiscodeongit/js-helpers",
-  "bugs": "github.com/vikputthiscodeongit/js-helpers/issues",
+  "repository": {
+    "type": "git",
+    "repository": "git+https://github.com/vikputthiscodeongit/js-helpers.git"
+  },
+  "bugs": "https://github.com/vikputthiscodeongit/js-helpers/issues",
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
