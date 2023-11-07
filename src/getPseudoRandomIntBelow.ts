@@ -1,4 +1,4 @@
-function getPseudoRandomIntBelow(max: number, includeMax: false | boolean) {
+function getPseudoRandomIntBelow(max: number, includeMax?: false | boolean) {
     if (!includeMax) {
         includeMax = false;
     }
