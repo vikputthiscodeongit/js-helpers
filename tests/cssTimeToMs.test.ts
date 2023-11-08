@@ -1,7 +1,7 @@
 import { expect, test } from "@jest/globals";
 import cssTimeToMs from "../src/cssTimeToMs.ts";
 
-test("Convert 'CSS style time' to milliseconds", () => {
+test("Should return 'CSS style time' converted to milliseconds", () => {
     expect(cssTimeToMs("10ms")).toBe(10);
     expect(cssTimeToMs("100s")).toBe(100000);
     expect(cssTimeToMs("1m")).toBe(60000);
@@ -14,7 +14,9 @@ test("Convert 'CSS style time' to milliseconds", () => {
     expect(cssTimeToMs("-1w")).toBe(-604800000);
     expect(cssTimeToMs("-1000")).toBe(-1000);
     expect(cssTimeToMs("1000")).toBe(1000);
+});
 
+test("Should return null or NaN if input unit or type is unknown", () => {
     expect(cssTimeToMs("1000asdf")).toBe(null);
     expect(cssTimeToMs([] as unknown as string)).toBeNaN();
     expect(cssTimeToMs({} as string)).toBeNaN();
