@@ -18,7 +18,7 @@ JavaScript helper functions for various operations, used across my projects.
   * [getCssUnit](#getcssunitvalue)
   * [getElPropValue](#getelpropvalueel-prop)
   * [isMotionAllowed](#ismotionallowed)
-  * [wait](#waitms)
+  * [wait](#waitms-promiseresolvevalue-abortcontroller)
 * [Migrating from `@codebundlesbyvik/js-*-operations`](#migrating-from-codebundlesbyvikjs--operations)
   * [Renamed functions](#renamed-functions)
 * [License](#license)
@@ -78,7 +78,7 @@ If you use the module files then you'll need to include the required [`core-js` 
 * [getCssUnit](#getcssunitvalue)
 * [getElPropValue](#getelpropvalueel-prop)
 * [isMotionAllowed](#ismotionallowed)
-* [wait](#waitms)
+* [wait](#waitms-promiseresolvevalue-abortcontroller)
 
 <br>
 
@@ -329,16 +329,23 @@ isMotionAllowed();
 
 <br>
 
-### `wait(ms)`
-Wait for a certain amount of time before continuing script execution.
+### `wait(ms, promiseResolveValue, abortController)`
+Wait for a certain amount of time before continuing script execution.<br>
+This is `setTimeout()` wrapped in a `Promise`, which is optionally resolved with `promiseResolveValue` and cancellable via an `AbortController`.
 
 #### Parameters
 * **\*** `ms` (`Number`): Duration after which script execution will continue.
+* `promiseResolveValue` (`undefined` | Valid `Promise.resolve()` value): Value which the promise will be resolved with.
+* `abortController` (`undefined | AbortController`): `AbortController` to call in order to cancel the timeout.
 
 #### Example
 ``` javascript
 // Wait for 3 seconds before doing something else.
 await wait(3000);
+
+// Wait for 5 seconds - or less if aborted earlier - before doing something else.
+const abortController = new AbortController();
+await wait(5000, "5 seconds have passed", abortController);
 ```
 
 <br>
