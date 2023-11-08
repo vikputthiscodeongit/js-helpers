@@ -1,5 +1,3 @@
-/*
-!/src
-!/tests
-!*config.*
-!*rc.*
+coverage/*
+dist/*
+package*.json
