@@ -12,6 +12,10 @@ test("Convert 'CSS style time' to milliseconds", () => {
     expect(cssTimeToMs("0.5d")).toBe(43200000);
     expect(cssTimeToMs("-.5m")).toBe(-30000);
     expect(cssTimeToMs("-1w")).toBe(-604800000);
+    expect(cssTimeToMs("-1000")).toBe(-1000);
     expect(cssTimeToMs("1000")).toBe(1000);
+
     expect(cssTimeToMs("1000asdf")).toBe(null);
+    expect(cssTimeToMs([] as unknown as string)).toBeNaN();
+    expect(cssTimeToMs({} as string)).toBeNaN();
 });
