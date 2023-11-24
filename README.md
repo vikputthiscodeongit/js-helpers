@@ -18,8 +18,9 @@ JavaScript helper functions for various operations, used across my projects.
   * [getCssUnit](#getcssunitvalue)
   * [getPseudoRandomIntBetween](#getpseudorandomintbetweenmin-max)
   * [wait](#waitms-promiseresolvevalue-abortcontroller)
-* [Migrating from `@codebundlesbyvik/js-*-operations`](#migrating-from-codebundlesbyvikjs--operations)
-  * [Renamed functions](#renamed-functions)
+* [Migrating](#migrating)
+  * [From version 1](#from-version-1)
+  * [From `@codebundlesbyvik/js-*-operations`](#from-codebundlesbyvikjs--operations)
 * [License](#license)
 
 <br>
@@ -273,21 +274,27 @@ await wait(5000, "5 seconds have passed", abortController);
 
 <br>
 
-## Migrating from `@codebundlesbyvik/js-*-operations`
+## Migrating
+### From version 1
+All function parameters are now type checked on runtime.
+
+* `createEls()` > **Removed** - write this code yourself (it was just a for loop)
+* `getRandomIntUnder()` > **Removed** - use `getPseudoRandomIntBetween(0, x)` instead
+* `motionAllowed()` > **Removed** - write this line of code yourself
+
+<br>
+
+### From `@codebundlesbyvik/js-*-operations`
 In case anyone was actually using any of my previous, now deprecated JavaScript helper packages: here's how to make a smooth transition.
 
-* **Functions that already existed haven't undergone breaking changes.**
-  * Any new features aren't breaking.
-* **Some functions have been renamed.**
+**Functions that already existed haven't undergone breaking changes - provided you were using them properly previously.** All function parameters are now typed and type checked on runtime.
 
-So in the worst case, all you need to do is update your imports.
-
-### Renamed functions
-* `getPropValue()` > `getElPropValue()`
-* `getRandomIntUnder()` > `getPseudoRandomIntBelow()`
+* `createEls()` > **Removed** - write this code yourself (it was just a for loop)
+* `getPropValue()` > `getCssPropValue()`
 * `getUnit()` > `getCssUnit()`
-* `motionAllowed()` > `isMotionAllowed()`
-* `timeToMs()` > `cssTimeToMs()`
+* `getRandomIntUnder()` > **Removed** - use `getPseudoRandomIntBetween(0, x)` instead
+* `motionAllowed()` > **Removed** - write this line of code yourself
+* `timeToMs()` > `cssDurationToMs()`
 
 <br>
 
