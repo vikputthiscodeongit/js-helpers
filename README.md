@@ -16,7 +16,6 @@ JavaScript helper functions for various operations, used across my projects.
   * [getAverage](#getaveragearray-round)
   * [getCssPropValue](#getcsspropvalueel-prop)
   * [getCssUnit](#getcssunitvalue)
-  * [isMotionAllowed](#ismotionallowed)
   * [getPseudoRandomIntBetween](#getpseudorandomintbetweenmin-max)
   * [wait](#waitms-promiseresolvevalue-abortcontroller)
 * [Migrating from `@codebundlesbyvik/js-*-operations`](#migrating-from-codebundlesbyvikjs--operations)
@@ -243,31 +242,16 @@ getCssUnit("100");
 
 <br>
 
-### `isMotionAllowed()`
-Check if `prefers-reduced-motion` is set to something other than 'reduce'. Returns a `Boolean`.
 ### `getPseudoRandomIntBetween(min, max)`
 Generate and return a positive pseudo-random integer between two given integers.
 
 ⚠️ **Makes use of [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random), which ISN'T cryptographically secure. You WILL BE FIRED if you misuse this function in an attempt to generate secure, random integers.** ⚠️
 
 #### Parameters
-- None
 * **\*** `min` (`Number`): Positive integer relative to which the returned integer will be equal to or greater than.
 * **\*** `max` (`Number`): Positive integer relative to which the returned integer will be smaller than.
 
 #### Example
-``` javascript
-// 'prefers-reduced-motion' is set to 'reduce'.
-isMotionAllowed();
-// false
-
-// 'prefers-reduced-motion' is set to 'no-preference'.
-isMotionAllowed();
-// true
-
-// 'prefers-reduced-motion' is unsupported.
-isMotionAllowed();
-// true
 ```javascript
 getPseudoRandomIntBetween(0, 10);
 // 7
