@@ -1,11 +1,7 @@
-type Resource = RequestInfo | URL;
-type FetchOptions = RequestInit;
-type Timeout = number;
-
 async function fetchWithTimeout(
-    resource: Resource,
-    fetchOptions?: FetchOptions | undefined,
-    timeout?: Timeout | undefined,
+    resource: RequestInfo | URL,
+    fetchOptions?: RequestInit | undefined,
+    timeout?: number | undefined
 ) {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), timeout || 8000);
