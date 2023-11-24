@@ -14,8 +14,8 @@ JavaScript helper functions for various operations, used across my projects.
   * [cssDurationToMs](#cssdurationtomstime)
   * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
   * [getAverage](#getaveragearray-round)
+  * [getCssPropValue](#getcsspropvalueel-prop)
   * [getCssUnit](#getcssunitvalue)
-  * [getElPropValue](#getelpropvalueel-prop)
   * [isMotionAllowed](#ismotionallowed)
   * [wait](#waitms-promiseresolvevalue-abortcontroller)
 * [Migrating from `@codebundlesbyvik/js-*-operations`](#migrating-from-codebundlesbyvikjs--operations)
@@ -44,13 +44,13 @@ npm install @codebundlesbyvik/js-helpers
 Import the helpers you need...
 
 ``` javascript
-import { getElPropValue, isMotionAllowed } from "@codebundlesbyvik/js-helpers";
 ```
 
 ...or import the bundle in its entirety.
 
 ``` javascript
 import * as helpers from "@codebundlesbyvik/js-helpers";
+import { getCssPropValue } from "@codebundlesbyvik/js-helpers";
 ```
 
 <br>
@@ -73,8 +73,8 @@ If you use the module files then you'll need to include the required [`core-js` 
 * [cssDurationToMs](#cssdurationtomstime)
 * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
 * [getAverage](#getaveragearray-round)
+* [getCssPropValue](#getcsspropvalueel-prop)
 * [getCssUnit](#getcssunitvalue)
-* [getElPropValue](#getelpropvalueel-prop)
 * [isMotionAllowed](#ismotionallowed)
 * [wait](#waitms-promiseresolvevalue-abortcontroller)
 
@@ -210,7 +210,7 @@ getCssUnit("100");
 
 <br>
 
-### `getElPropValue(el, prop)`
+### `getCssPropValue(el, prop)`
 Get an `Element`'s CSS property value.
 
 If the given property is not set, the returned value will be `null`.
@@ -226,13 +226,16 @@ const el = document.querySelector("#example-div-1");
 // margin-bottom: 0.75rem;
 // background-color: black;
 
-getElPropValue(el, "margin-bottom");
+getCssPropValue(el, "margin-bottom");
 // "0.75rem"
 
-getElPropValue(el, "background-color");
+getCssPropValue(el, "background-color");
 // "black"
 
-getElPropValue(el, "non-existent");
+getCssPropValue(el, "box-shadow");
+// null
+
+getCssPropValue(el, "non-existent");
 // null
 ```
 
