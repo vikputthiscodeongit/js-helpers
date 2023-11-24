@@ -1,1 +1,1 @@
-function getCssUnit(value){if(!value)return null;const length=value.length;if(!length)return null;let i=length;for(;i--;)if(!Number.isNaN(Number.parseInt(value[i])))return value.slice(i+1,length)||null;return null}export{getCssUnit as default};
+import"core-js/modules/es.error.cause.js";function getCssUnit(value){if("string"!=typeof value)throw new Error("'value' must be of type String.");const length=value.length;let i=length;for(;i--;)if(!Number.isNaN(Number.parseInt(value[i])))return value.slice(i+1,length)||null;return null}export{getCssUnit as default};

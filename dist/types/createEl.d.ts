@@ -1,5 +1,5 @@
 type ElAttrs = {
-    [key: string]: string;
+    [key: string]: string | number | boolean | null;
 };
 type ElTagName = string;
 declare function createEl(tagName: ElTagName, attrs?: ElAttrs | undefined): HTMLElement;

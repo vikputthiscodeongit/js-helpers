@@ -1,0 +1,1 @@
+import"core-js/modules/es.error.cause.js";function getCssPropValue(el,prop){if("string"!=typeof prop)throw new Error("'prop' must be of type String.");const propValue=window.getComputedStyle(el).getPropertyValue(prop);return""===propValue?null:propValue}export{getCssPropValue as default};
