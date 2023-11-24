@@ -44,12 +44,6 @@ npm install @codebundlesbyvik/js-helpers
 Import the helpers you need...
 
 ``` javascript
-```
-
-...or import the bundle in its entirety.
-
-``` javascript
-import * as helpers from "@codebundlesbyvik/js-helpers";
 import { getCssPropValue } from "@codebundlesbyvik/js-helpers";
 ```
 
@@ -59,12 +53,10 @@ import { getCssPropValue } from "@codebundlesbyvik/js-helpers";
 [Download the latest release from GitHub](https://github.com/vikputthiscodeongit/js-helpers/releases/latest).
 
 Then you can either:
-* Use the UMD bundle, or
 * Import the helpers you need from the index file, or
 * Import the helpers you need seperately.
 
-The UMD bundle has the required `core-js` polyfills inlined.<br>
-If you use the module files then you'll need to include the required [`core-js` polyfills](https://github.com/zloirock/core-js/releases/latest) yourself. These are loaded from a subdirectory `corejs/modules`, whose location should be relative to the directory where the `js-helpers` files are stored.
+You'll need to include the required [`core-js` polyfills](https://github.com/zloirock/core-js/releases/latest) yourself. These are loaded from a subdirectory `corejs/modules`, whose location should be relative to the directory where the `js-helpers` files are stored.
 
 <br>
 
