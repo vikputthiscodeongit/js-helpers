@@ -260,20 +260,21 @@ getPseudoRandomIntBetween(0, 10);
 <br>
 
 ### `wait(ms, promiseResolveValue, abortController)`
-Wait for a certain amount of time before continuing script execution.<br>
-This is `setTimeout()` wrapped in a `Promise`, which is optionally resolved with `promiseResolveValue` and cancellable via an `AbortController`.
+Wait for a given amount of time before continuing script execution.
+
+`setTimeout()` wrapped in a `Promise`, which is optionally resolved with `promiseResolveValue` and cancellable via an `AbortController`.
 
 #### Parameters
-* **\*** `ms` (`Number`): Duration after which script execution will continue.
-* `promiseResolveValue` (`undefined` | Valid `Promise.resolve()` value): Value which the promise will be resolved with.
-* `abortController` (`undefined | AbortController`): `AbortController` to call in order to cancel the timeout.
+* **\*** `ms` (`Number`): Time in milliseconds after which script execution will continue.
+* `promiseResolveValue` (`undefined` | Any valid `Promise.resolve()` value): Value which the promise will be resolved with.
+* `abortController` (`undefined | AbortController`): `AbortController` which the timeout can be cancelled with.
 
 #### Example
 ``` javascript
 // Wait for 3 seconds before doing something else.
 await wait(3000);
 
-// Wait for 5 seconds - or less if aborted earlier - before doing something else.
+// Wait for 5 seconds before doing something else - or less if aborted earlier.
 const abortController = new AbortController();
 await wait(5000, "5 seconds have passed", abortController);
 ```

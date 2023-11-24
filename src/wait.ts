@@ -1,10 +1,10 @@
-// https://stackoverflow.com/a/25345746, with typings.
+// Slightly modified version of https://stackoverflow.com/a/25345746.
 type PromiseResolveValue = Awaited<ReturnType<typeof Promise.resolve>>;
 
 function wait(
     ms: number,
     promiseResolveValue?: PromiseResolveValue,
-    abortController?: AbortController,
+    abortController?: AbortController
 ) {
     const signal = abortController?.signal;
 
