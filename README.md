@@ -219,29 +219,19 @@ getCssPropValue(el, "non-existent");
 
 <br>
 
-### `getPseudoRandomIntBelow(max, includeMax)`
-Generate and return a pseudo-random integer below a given integer.
 ### `getCssUnit(value)`
 Get the unit of a quantitative 'CSS-style' value.
 
-⚠️ **Makes use of [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random), which ISN'T cryptographically secure. You WILL BE FIRED if you misuse this function in an attempt to generate secure, random integers.** ⚠️
 If the given value has no unit, the returned value will be `null`.
 
 #### Parameters
-* **\*** `max` (`Number`): Depending on `includeMax`, the returned integer will be either equal to or below this number.
-* `includeMax` (`false | Boolean`): Whether or not to include `max` when generating the integer.
 * `value` (`String`): 'CSS-style' value to get the unit from.
 
 #### Example
-```javascript
-getPseudoRandomIntBelow(10);
-// 7
 ``` javascript
 getCssUnit("2px");
 // "px"
 
-getPseudoRandomIntBelow(10, true);
-// 10
 getCssUnit(".5ms");
 // "ms"
 
