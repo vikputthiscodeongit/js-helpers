@@ -1,10 +1,9 @@
 import getCssUnit from "./getCssUnit.ts";
 
-function cssTimeToMs(time: string) {
+function cssDurationToMs(time: string) {
     const timeAsNumber = Number.parseFloat(time);
 
     switch (getCssUnit(time)) {
-        case null:
         case "ms":
             return timeAsNumber;
 
@@ -31,4 +30,4 @@ function cssTimeToMs(time: string) {
     }
 }
 
-export { cssTimeToMs as default };
+export { cssDurationToMs as default };
