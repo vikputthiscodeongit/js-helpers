@@ -27,9 +27,9 @@ JavaScript helper functions for various operations, used across my projects.
 ## Compatibility
 The distributables are compiled with the following `browserslist`:
 ```
-"> 0.1% and fully supports object-entries"
+"> 0.1% and fully supports async-functions"
 ```
-Practically speaking, all popular browser versions released after H2 2016 are supported.
+Practically speaking, all popular browser versions released from the start of 2017 and onwards are supported.
 
 <br>
 
