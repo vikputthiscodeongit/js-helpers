@@ -24,7 +24,6 @@
     "duration",
     "milliseconds",
     "ms",
-    "motion",
     "promise",
     "time",
     "timeout",
@@ -38,7 +37,7 @@
   ],
   "repository": {
     "type": "git",
-    "repository": "git+https://github.com/vikputthiscodeongit/js-helpers.git"
+    "repository": "https://github.com/vikputthiscodeongit/js-helpers.git"
   },
   "bugs": "https://github.com/vikputthiscodeongit/js-helpers/issues",
   "exports": {

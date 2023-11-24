@@ -55,7 +55,7 @@ import { getCssPropValue } from "@codebundlesbyvik/js-helpers";
 
 Then you can either:
 * Import the helpers you need from the index file, or
-* Import the helpers you need seperately.
+* Import the helpers you need separately.
 
 You'll need to include the required [`core-js` polyfills](https://github.com/zloirock/core-js/releases/latest) yourself. These are loaded from a subdirectory `corejs/modules`, whose location should be relative to the directory where the `js-helpers` files are stored.
 
@@ -68,7 +68,6 @@ You'll need to include the required [`core-js` polyfills](https://github.com/zlo
 * [getAverage](#getaveragearray-round)
 * [getCssPropValue](#getcsspropvalueel-prop)
 * [getCssUnit](#getcssunitvalue)
-* [isMotionAllowed](#ismotionallowed)
 * [getPseudoRandomIntBetween](#getpseudorandomintbetweenmin-max)
 * [wait](#waitms-promiseresolvevalue-abortcontroller)
 
