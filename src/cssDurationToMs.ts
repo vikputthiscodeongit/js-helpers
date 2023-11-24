@@ -1,6 +1,8 @@
 import getCssUnit from "./getCssUnit.ts";
 
 function cssDurationToMs(time: string) {
+    if (typeof time !== "string") throw new Error("'time' must be of type String");
+
     const timeAsNumber = Number.parseFloat(time);
 
     switch (getCssUnit(time)) {

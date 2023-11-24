@@ -11,7 +11,7 @@ JavaScript helper functions for various operations, used across my projects.
 * [Installation](#installation)
 * [Functions](#functions)
   * [createEl](#createeltagname-attrs)
-  * [cssTimeToMs](#csstimetomstime)
+  * [cssDurationToMs](#cssdurationtomstime)
   * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
   * [getAverage](#getaveragearray-round)
   * [getCssUnit](#getcssunitvalue)
@@ -70,7 +70,7 @@ If you use the module files then you'll need to include the required [`core-js` 
 
 ## Functions
 * [createEl](#createeltagname-attrs)
-* [cssTimeToMs](#csstimetomstime)
+* [cssDurationToMs](#cssdurationtomstime)
 * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
 * [getAverage](#getaveragearray-round)
 * [getCssUnit](#getcssunitvalue)
@@ -112,10 +112,10 @@ createEl("div", ATTRS);
 
 <br>
 
-### `cssTimeToMs(time)`
+### `cssDurationToMs(time)`
 Convert a 'CSS-style time' to a `Number` of milliseconds.
 
-If the given value is unitless, it'll be returned as-is. If it has an unrecognized unit, the returned value will be `null`.
+If the given value has no or an unrecognized unit, the returned value will be `null`.
 
 #### Parameters
 * `time` (`String`): 'CSS-style' time duration.
@@ -130,20 +130,20 @@ If the given value is unitless, it'll be returned as-is. If it has an unrecogniz
 
 #### Example
 ``` javascript
-cssTimeToMs("2s");
+cssDurationToMs("2s");
 // 2000
 
-cssTimeToMs("0.25d");
+cssDurationToMs("0.25d");
 // 21600000
 
-cssTimeToMs("-1w");
+cssDurationToMs("-1w");
 // -604800000
 
-cssTimeToMs("1asdf");
+cssDurationToMs("1asdf");
 // null
 
-cssTimeToMs("20");
-// 20
+cssDurationToMs("20");
+// null
 ```
 
 <br>

@@ -20,3 +20,11 @@ test("Valid time type, invalid duration", () => {
     expect(cssDurationToMs("1000")).toBe(null);
     expect(cssDurationToMs("-1000")).toBe(null);
 });
+
+test("Invalid time type", () => {
+    expect(() => cssDurationToMs(null as unknown as string)).toThrowError();
+    expect(() => cssDurationToMs(true as unknown as string)).toThrowError();
+    expect(() => cssDurationToMs(false as unknown as string)).toThrowError();
+    expect(() => cssDurationToMs([] as unknown as string)).toThrowError();
+    expect(() => cssDurationToMs({} as unknown as string)).toThrowError();
+});
