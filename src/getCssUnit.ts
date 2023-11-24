@@ -1,10 +1,7 @@
-function getCssUnit(value?: string | undefined) {
-    if (!value) return null;
+function getCssUnit(value: string) {
+    if (typeof value !== "string") throw new Error("'value' must be of type String.");
 
     const length = value.length;
-
-    if (!length) return null;
-
     let i = length;
 
     while (i--) {
