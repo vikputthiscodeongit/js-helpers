@@ -17,6 +17,7 @@ JavaScript helper functions for various operations, used across my projects.
   * [getCssPropValue](#getcsspropvalueel-prop)
   * [getCssUnit](#getcssunitvalue)
   * [isMotionAllowed](#ismotionallowed)
+  * [getPseudoRandomIntBetween](#getpseudorandomintbetweenmin-max)
   * [wait](#waitms-promiseresolvevalue-abortcontroller)
 * [Migrating from `@codebundlesbyvik/js-*-operations`](#migrating-from-codebundlesbyvikjs--operations)
   * [Renamed functions](#renamed-functions)
@@ -76,6 +77,7 @@ If you use the module files then you'll need to include the required [`core-js` 
 * [getCssPropValue](#getcsspropvalueel-prop)
 * [getCssUnit](#getcssunitvalue)
 * [isMotionAllowed](#ismotionallowed)
+* [getPseudoRandomIntBetween](#getpseudorandomintbetweenmin-max)
 * [wait](#waitms-promiseresolvevalue-abortcontroller)
 
 <br>
@@ -243,9 +245,15 @@ getCssUnit("100");
 
 ### `isMotionAllowed()`
 Check if `prefers-reduced-motion` is set to something other than 'reduce'. Returns a `Boolean`.
+### `getPseudoRandomIntBetween(min, max)`
+Generate and return a positive pseudo-random integer between two given integers.
+
+⚠️ **Makes use of [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random), which ISN'T cryptographically secure. You WILL BE FIRED if you misuse this function in an attempt to generate secure, random integers.** ⚠️
 
 #### Parameters
 - None
+* **\*** `min` (`Number`): Positive integer relative to which the returned integer will be equal to or greater than.
+* **\*** `max` (`Number`): Positive integer relative to which the returned integer will be smaller than.
 
 #### Example
 ``` javascript
@@ -260,6 +268,9 @@ isMotionAllowed();
 // 'prefers-reduced-motion' is unsupported.
 isMotionAllowed();
 // true
+```javascript
+getPseudoRandomIntBetween(0, 10);
+// 7
 ```
 
 <br>
