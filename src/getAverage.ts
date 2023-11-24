@@ -1,7 +1,4 @@
-function getAverage(array: number[], round?: false | "floor" | "ceil" | undefined) {
-    if (!round) {
-        round = false;
-    }
+function getAverage(numbers: number[], round?: "floor" | "ceil" | undefined) {
     if (!Array.isArray(numbers)) throw new Error("'numbers' must be of type Array.");
     if (round && typeof round !== "string") throw new Error("'round' value is invalid.");
 
