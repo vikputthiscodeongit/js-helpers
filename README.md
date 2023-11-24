@@ -11,7 +11,6 @@ JavaScript helper functions for various operations, used across my projects.
 * [Installation](#installation)
 * [Functions](#functions)
   * [createEl](#createeltagname-attrs)
-  * [createEls](#createelselskeletons)
   * [cssTimeToMs](#csstimetomstime)
   * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
   * [getAverage](#getaveragearray-round)
@@ -71,7 +70,6 @@ If you use the module files then you'll need to include the required [`core-js` 
 
 ## Functions
 * [createEl](#createeltagname-attrs)
-* [createEls](#createelselskeletons)
 * [cssTimeToMs](#csstimetomstime)
 * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
 * [getAverage](#getaveragearray-round)
@@ -110,52 +108,6 @@ createEl("div", ATTRS);
 // <div class="example-div" id="example-div-1" aria-hidden="true">
 //     This is an example
 // </div>
-```
-
-<br>
-
-### `createEls(elSkeletons)`
-Create and return an object of `HTMLElement`s.
-
-#### Parameters
-* **\*** `elSkeletons` (`Object`): An object that consists of multiple [createEl](#createeltagname-attrs) `tagName` / `attrs` entries.
-
-#### Example
-```javascript
-const SKELETONS = {
-    fieldset: {
-        el: "fieldset",
-    },
-    field: {
-        el: "div",
-        attrs: {
-            class: "field",
-        },
-    },
-    label: {
-        el: "label",
-        attrs: {
-            for: "example-input"
-        }
-    },
-    input: {
-        el: "input",
-        attrs: {
-            id: "example-input",
-            name: "example-input",
-            placeholder: "Example input",
-        }
-    }
-};
-
-createEls(SKELETONS);
-
-// {
-//     fieldset: <fieldset></fieldset>,
-//     field: <div class="field"></div>,
-//     label: <label for="example-input"></label>,
-//     input: <input id="example-input" name="example-input" placeholder="Example input" />
-// }
 ```
 
 <br>
