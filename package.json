@@ -1,11 +1,12 @@
 {
   "name": "@codebundlesbyvik/js-helpers",
   "version": "1.0.0",
-  "description": "JavaScript helper functions for various operations.",
+  "description": "JavaScript helper functions for various client sided operations.",
   "keywords": [
-    "es6",
+    "esm",
+    "es modules",
     "typescript",
-    "ts",
+    "typed",
     "helpers",
     "lightweight",
     "css",
@@ -17,6 +18,7 @@
     "element",
     "number",
     "int",
+    "motion",
     "prop",
     "value",
     "unit",

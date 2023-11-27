@@ -2,7 +2,7 @@
 [![npm](https://img.shields.io/npm/v/@codebundlesbyvik/js-helpers)](https://www.npmjs.com/package/@codebundlesbyvik/js-helpers)
 [![npm - downloads per week](https://img.shields.io/npm/dw/@codebundlesbyvik/js-helpers)](https://www.npmjs.com/package/@codebundlesbyvik/js-helpers)
 
-JavaScript helper functions for various operations, used across my projects.
+JavaScript helper functions for various client sided operations, used across my projects.
 
 <br>
 
@@ -35,8 +35,8 @@ Practically speaking, all popular browser versions released from the start of 20
 
 <br>
 
-## Installation
-### Usage within the Node.js ecosystem
+## Usage
+### With a module bundler
 Install the package with npm.
 
 ``` shell
@@ -49,16 +49,12 @@ Import the helpers you need...
 import { getCssPropValue } from "@codebundlesbyvik/js-helpers";
 ```
 
+... and compile your project with a module bundler.
+
 <br>
 
-### Standalone usage
-[Download the latest release from GitHub](https://github.com/vikputthiscodeongit/js-helpers/releases/latest).
-
-Then you can either:
-* Import the helpers you need from the index file, or
-* Import the helpers you need separately.
-
-You'll need to include the required [`core-js` polyfills](https://github.com/zloirock/core-js/releases/latest) yourself. These are loaded from a subdirectory `corejs/modules`, whose location should be relative to the directory where the `js-helpers` files are stored.
+### Without a module bundler
+[Download the latest release from GitHub](https://github.com/vikputthiscodeongit/js-helpers/releases/latest) and load the helpers you need as an ES Module. Some helpers require [`core-js` polyfills](https://github.com/zloirock/core-js/releases/latest), which are to be loaded from `./corejs/modules` - a directory whose location is relative to the one where the `js-helpers` are stored.
 
 <br>
 
@@ -144,7 +140,7 @@ cssDurationToMs("20");
 <br>
 
 ### `fetchWithTimeout(resource, fetchOptions, timeout)`
-Make a `fetch()` call that's aborted by an `AbortController` after a given amount of time.
+Make a `fetch()` call that's aborted by an `AbortController` after some amount of time.
 
 #### Parameters
 * **\*** `resource` (`RequestInfo | URL`): Location of the resource.
@@ -153,8 +149,11 @@ Make a `fetch()` call that's aborted by an `AbortController` after a given amoun
 
 #### Example
 ``` javascript
-// Make a GET request that's aborted if no response is returned within 10 seconds.
-await fetchWithTimeout("target-resource-url", { method: "GET" }, 10000);
+// Make a GET request that's aborted if no response is returned within 8 seconds.
+await fetchWithTimeout("https://example.com/api/endpoint");
+
+// Make a POST request that's aborted if no response is returned within 10 seconds.
+await fetchWithTimeout("https://example.com/api/endpoint", { method: "POST" }, 10000);
 ```
 
 <br>
@@ -186,7 +185,7 @@ getAverage([0.1, 0.33, 0.82, 1], "ceil");
 ### `getCssPropValue(el, prop)`
 Get an `Element`'s CSS property value.
 
-If the given property is not set, the returned value will be `null`.
+If the property is not set, the returned value will be `null`.
 
 #### Parameters
 * **\*** `el` (`Element`): The target.
@@ -217,7 +216,7 @@ getCssPropValue(el, "non-existent");
 ### `getCssUnit(value)`
 Get the unit of a quantitative 'CSS-style' value.
 
-If the given value has no unit, the returned value will be `null`.
+If the value has no unit, the returned value will be `null`.
 
 #### Parameters
 * `value` (`String`): 'CSS-style' value to get the unit from.
@@ -306,15 +305,14 @@ All function parameters are now type checked on runtime.
 <br>
 
 ### From `@codebundlesbyvik/js-*-operations`
-In case anyone was actually using any of my previous, now deprecated JavaScript helper packages: here's how to make a smooth transition.
-
-**Functions that already existed haven't undergone breaking changes - provided you were using them properly previously.** All function parameters are now typed and type checked on runtime.
-
-* `createEls()` > **Removed** - write this code yourself (it was just a for loop)
+* `createEls()` > **Removed**
+  * Write this code yourself - it was just a for loop.
 * `getPropValue()` > `getCssPropValue()`
 * `getUnit()` > `getCssUnit()`
 * `getRandomIntUnder()` > **Removed** - use `getPseudoRandomIntBetween(0, x)` instead
 * `timeToMs()` > `cssDurationToMs()`
+
+Changes to existing functions are small; if you were using them as intended, migration should be free of issues. Any problems you do encounter should be easily fixable by the error thrown.
 
 <br>
 
