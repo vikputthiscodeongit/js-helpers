@@ -17,6 +17,7 @@ JavaScript helper functions for various operations, used across my projects.
   * [getCssPropValue](#getcsspropvalueel-prop)
   * [getCssUnit](#getcssunitvalue)
   * [getPseudoRandomIntBetween](#getpseudorandomintbetweenmin-max)
+  * [isMotionAllowed](#ismotionallowed)
   * [wait](#waitms-promiseresolvevalue-abortcontroller)
 * [Migrating](#migrating)
   * [From version 1](#from-version-1)
@@ -69,6 +70,7 @@ You'll need to include the required [`core-js` polyfills](https://github.com/zlo
 * [getCssPropValue](#getcsspropvalueel-prop)
 * [getCssUnit](#getcssunitvalue)
 * [getPseudoRandomIntBetween](#getpseudorandomintbetweenmin-max)
+* [isMotionAllowed](#ismotionallowed)
 * [wait](#waitms-promiseresolvevalue-abortcontroller)
 
 <br>
@@ -240,6 +242,7 @@ Generate and return a positive pseudo-random integer between two given integers.
 ⚠️ **Makes use of [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random), which ISN'T cryptographically secure. You WILL BE FIRED if you misuse this function in an attempt to generate secure, random integers.** ⚠️
 
 #### Parameters
+- None
 * **\*** `min` (`Number`): Positive integer relative to which the returned integer will be equal to or greater than.
 * **\*** `max` (`Number`): Positive integer relative to which the returned integer will be smaller than.
 
@@ -247,6 +250,26 @@ Generate and return a positive pseudo-random integer between two given integers.
 ```javascript
 getPseudoRandomIntBetween(0, 10);
 // 7
+```
+
+<br>
+
+### `isMotionAllowed()`
+Check if `prefers-reduced-motion` is set to something other than 'reduce'. Returns a `Boolean`.
+
+#### Example
+``` javascript
+// 'prefers-reduced-motion' is set to 'reduce'.
+isMotionAllowed();
+// false
+
+// 'prefers-reduced-motion' is set to 'no-preference'.
+isMotionAllowed();
+// true
+
+// 'prefers-reduced-motion' is unsupported.
+isMotionAllowed();
+// true
 ```
 
 <br>
@@ -279,7 +302,6 @@ All function parameters are now type checked on runtime.
 
 * `createEls()` > **Removed** - write this code yourself (it was just a for loop)
 * `getRandomIntUnder()` > **Removed** - use `getPseudoRandomIntBetween(0, x)` instead
-* `motionAllowed()` > **Removed** - write this line of code yourself
 
 <br>
 
@@ -292,7 +314,6 @@ In case anyone was actually using any of my previous, now deprecated JavaScript 
 * `getPropValue()` > `getCssPropValue()`
 * `getUnit()` > `getCssUnit()`
 * `getRandomIntUnder()` > **Removed** - use `getPseudoRandomIntBetween(0, x)` instead
-* `motionAllowed()` > **Removed** - write this line of code yourself
 * `timeToMs()` > `cssDurationToMs()`
 
 <br>
