@@ -4,7 +4,7 @@ type PromiseResolveValue = Awaited<ReturnType<typeof Promise.resolve>>;
 function wait(
     ms: number,
     promiseResolveValue?: PromiseResolveValue,
-    abortController?: AbortController
+    abortController?: AbortController,
 ) {
     const signal = abortController?.signal;
 

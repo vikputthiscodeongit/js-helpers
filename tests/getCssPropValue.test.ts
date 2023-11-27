@@ -49,6 +49,6 @@ test("Invalid el type, invalid prop type", () => {
     const prop = false;
 
     expect(() =>
-        getCssPropValue(el as unknown as HTMLElement, prop as unknown as string)
+        getCssPropValue(el as unknown as HTMLElement, prop as unknown as string),
     ).toThrowError();
 });

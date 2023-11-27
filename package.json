@@ -48,11 +48,12 @@
   },
   "type": "module",
   "scripts": {
+    "build-dev": "cross-env NODE_ENV=development rimraf dist && npm run compile-js && npm run generate-types",
+    "build": "cross-env NODE_ENV=production npm run lint-fix && npm run test && rimraf dist && npm run compile-js && npm run minify && npm run generate-types",
     "compile-js": "babel src --out-dir dist --extensions .ts",
     "generate-types": "tsc",
     "lint": "eslint . src/** tests/** --config .eslintrc.cjs",
     "lint-fix": "eslint . src/** tests/** --config .eslintrc.cjs --fix",
-    "make-release": "cross-env NODE_ENV=production npm run lint-fix && npm run test && rimraf dist && npm run generate-types && npm run compile-js && npm run minify",
     "minify": "node terser.config.cjs",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config=jest.config.cjs --coverage"
   },

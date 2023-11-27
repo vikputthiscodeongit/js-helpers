@@ -69,7 +69,7 @@ test("Valid tagName, invalid attrs type", () => {
 
 test("Invalid tagName type, valid attrs items (type String)", () => {
     expect(() =>
-        createEl(123 as unknown as string, { class: "test-class", id: "test-id" })
+        createEl(123 as unknown as string, { class: "test-class", id: "test-id" }),
     ).toThrowError();
 });
 

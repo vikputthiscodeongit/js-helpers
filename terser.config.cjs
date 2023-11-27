@@ -23,13 +23,8 @@ function getAllFiles(dirPath, arrayOfFiles) {
 }
 
 async function minifyFiles(filePaths, terserOptions) {
-    console.log("Running Terser...");
-
-    console.log("Included files:");
+    console.log("Running Terser on the following files:");
     console.log(filePaths);
-
-    console.log("Set options:");
-    console.log(terserOptions);
 
     await Promise.all(
         filePaths.map(async (filePath) => {

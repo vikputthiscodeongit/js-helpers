@@ -29,7 +29,7 @@ test("Invalid range - max smaller than min", () => {
 
 test("Invalid min & max (type String)", () => {
     expect(() =>
-        getPseudoRandomIntBetween("-5" as unknown as number, "5" as unknown as number)
+        getPseudoRandomIntBetween("-5" as unknown as number, "5" as unknown as number),
     ).toThrowError();
 });
 
