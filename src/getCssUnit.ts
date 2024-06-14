@@ -1,5 +1,5 @@
 function getCssUnit(value: string) {
-    if (typeof value !== "string") throw new Error("'value' must be of type String.");
+    if (typeof value !== "string") throw new Error("'value' must be a `String`.");
 
     const length = value.length;
     let i = length;

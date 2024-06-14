@@ -2,8 +2,8 @@ type ElAttrs = { [key: string]: string | number | boolean | null };
 type ElTagName = string;
 
 function createEl(tagName: ElTagName, attrs?: ElAttrs | undefined) {
-    if (typeof tagName !== "string") throw new Error("'tagName' must be of type String.");
-    if (attrs && typeof attrs !== "object") throw new Error("'attrs' must be of type Object.");
+    if (typeof tagName !== "string") throw new Error("'tagName' must be a `String`.");
+    if (attrs && typeof attrs !== "object") throw new Error("'attrs' must be an `Object`.");
 
     const el = document.createElement(tagName);
 
