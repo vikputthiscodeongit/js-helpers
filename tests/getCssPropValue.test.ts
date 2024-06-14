@@ -37,15 +37,22 @@ test("Valid el type, invalid prop type", () => {
     expect(() => getCssPropValue(el, prop as unknown as string)).toThrowError();
 });
 
-test("Invalid el type, valid prop", () => {
+test("Invalid el type, unset prop", () => {
     const el = null;
-    const prop = "color";
+    const prop = "unknown-property";
+
+    expect(() => getCssPropValue(el as unknown as HTMLElement, prop)).toThrowError();
+});
+
+test("Invalid el type, unset prop", () => {
+    const el = 0;
+    const prop = "unknown-property";
 
     expect(() => getCssPropValue(el as unknown as HTMLElement, prop)).toThrowError();
 });
 
 test("Invalid el type, invalid prop type", () => {
-    const el = null;
+    const el = 0;
     const prop = false;
 
     expect(() =>
