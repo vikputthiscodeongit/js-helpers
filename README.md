@@ -8,7 +8,7 @@ JavaScript helper functions for various client sided operations, used across my 
 
 ## Table of Contents
 * [Compatibility](#compatibility)
-* [Installation](#installation)
+* [Usage](#usage)
 * [Functions](#functions)
   * [createEl](#createeltagname-attrs)
   * [cssDurationToMs](#cssdurationtomsduration)
