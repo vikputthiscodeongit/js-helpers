@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1701126702058" clover="3.2.0">
-  <project timestamp="1701126702058" name="All files">
-    <metrics statements="51" coveredstatements="51" conditionals="46" coveredconditionals="46" methods="8" coveredmethods="8" elements="105" coveredelements="105" complexity="0" loc="51" ncloc="51" packages="1" files="6" classes="6"/>
+<coverage generated="1718390068887" clover="3.2.0">
+  <project timestamp="1718390068888" name="All files">
+    <metrics statements="51" coveredstatements="51" conditionals="48" coveredconditionals="48" methods="8" coveredmethods="8" elements="107" coveredelements="107" complexity="0" loc="51" ncloc="51" packages="1" files="6" classes="6"/>
     <file name="createEl.ts" path="C:\wamp64\www\js-helpers\src\createEl.ts">
       <metrics statements="14" coveredstatements="14" conditionals="15" coveredconditionals="15" methods="2" coveredmethods="2"/>
       <line num="5" count="10" type="cond" truecount="1" falsecount="0"/>
@@ -20,18 +20,17 @@
       <line num="34" count="7" type="stmt"/>
     </file>
     <file name="cssDurationToMs.ts" path="C:\wamp64\www\js-helpers\src\cssDurationToMs.ts">
-      <metrics statements="11" coveredstatements="11" conditionals="9" coveredconditionals="9" methods="1" coveredmethods="1"/>
+      <metrics statements="10" coveredstatements="10" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
       <line num="4" count="19" type="cond" truecount="1" falsecount="0"/>
       <line num="6" count="14" type="stmt"/>
-      <line num="8" count="14" type="cond" truecount="8" falsecount="0"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="13" count="1" type="stmt"/>
+      <line num="8" count="14" type="cond" truecount="7" falsecount="0"/>
+      <line num="10" count="2" type="stmt"/>
+      <line num="13" count="2" type="stmt"/>
       <line num="16" count="2" type="stmt"/>
       <line num="19" count="1" type="stmt"/>
-      <line num="22" count="2" type="stmt"/>
-      <line num="25" count="2" type="stmt"/>
-      <line num="28" count="1" type="stmt"/>
-      <line num="31" count="4" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="25" count="1" type="stmt"/>
+      <line num="28" count="5" type="stmt"/>
     </file>
     <file name="getAverage.ts" path="C:\wamp64\www\js-helpers\src\getAverage.ts">
       <metrics statements="8" coveredstatements="8" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
@@ -45,11 +44,12 @@
       <line num="17" count="5" type="stmt"/>
     </file>
     <file name="getCssPropValue.ts" path="C:\wamp64\www\js-helpers\src\getCssPropValue.ts">
-      <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
-      <line num="2" count="7" type="cond" truecount="1" falsecount="0"/>
-      <line num="4" count="5" type="stmt"/>
+      <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+      <line num="2" count="8" type="cond" truecount="3" falsecount="0"/>
+      <line num="3" count="5" type="cond" truecount="1" falsecount="0"/>
       <line num="5" count="4" type="stmt"/>
-      <line num="7" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="6" count="4" type="stmt"/>
+      <line num="8" count="4" type="cond" truecount="2" falsecount="0"/>
     </file>
     <file name="getCssUnit.ts" path="C:\wamp64\www\js-helpers\src\getCssUnit.ts">
       <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
@@ -57,7 +57,7 @@
       <line num="4" count="25" type="stmt"/>
       <line num="5" count="25" type="stmt"/>
       <line num="7" count="25" type="stmt"/>
-      <line num="8" count="56" type="cond" truecount="1" falsecount="0"/>
+      <line num="8" count="57" type="cond" truecount="1" falsecount="0"/>
       <line num="9" count="24" type="cond" truecount="2" falsecount="0"/>
       <line num="13" count="1" type="stmt"/>
     </file>
@@ -67,9 +67,9 @@
       <line num="3" count="2" type="stmt"/>
       <line num="4" count="5" type="cond" truecount="4" falsecount="0"/>
       <line num="5" count="3" type="stmt"/>
-      <line num="7" count="2" type="stmt"/>
-      <line num="8" count="2" type="stmt"/>
+      <line num="9" count="2" type="stmt"/>
       <line num="10" count="2" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
     </file>
   </project>
 </coverage>
