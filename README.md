@@ -11,8 +11,8 @@ JavaScript helper functions for various client sided operations, used across my 
 * [Installation](#installation)
 * [Functions](#functions)
   * [createEl](#createeltagname-attrs)
-  * [cssDurationToMs](#cssdurationtomstime)
   * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
+  * [cssDurationToMs](#cssdurationtomsduration)
   * [getAverage](#getaveragearray-round)
   * [getCssPropValue](#getcsspropvalueel-prop)
   * [getCssUnit](#getcssunitvalue)
@@ -60,8 +60,8 @@ import { getCssPropValue } from "@codebundlesbyvik/js-helpers";
 
 ## Functions
 * [createEl](#createeltagname-attrs)
-* [cssDurationToMs](#cssdurationtomstime)
 * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
+* [cssDurationToMs](#cssdurationtomsduration)
 * [getAverage](#getaveragearray-round)
 * [getCssPropValue](#getcsspropvalueel-prop)
 * [getCssUnit](#getcssunitvalue)
@@ -103,13 +103,13 @@ createEl("div", ATTRS);
 
 <br>
 
-### `cssDurationToMs(time)`
-Convert a 'CSS-style time' to a `Number` of milliseconds.
+### `cssDurationToMs(duration)`
+Convert a CSS-style time duration value to a `Number` of milliseconds.
 
 If the given value has no or an unrecognized unit, the returned value will be `null`.
 
 #### Parameters
-* `time` (`String`): 'CSS-style' time duration.
+* `duration` (`String`): 'CSS-style' time duration.
 
 #### Supported units
 * `ms`: Milliseconds

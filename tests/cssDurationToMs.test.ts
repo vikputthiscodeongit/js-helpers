@@ -13,7 +13,7 @@ test("Valid time type, valid duration", () => {
     expect(cssDurationToMs("-1w")).toBe(-604800000);
 });
 
-test("Valid time type, invalid duration", () => {
+test("Valid duration type, invalid duration", () => {
     expect(cssDurationToMs("1y")).toBe(null);
     expect(cssDurationToMs("1000asdf")).toBe(null);
     expect(cssDurationToMs("0")).toBe(null);
@@ -21,7 +21,7 @@ test("Valid time type, invalid duration", () => {
     expect(cssDurationToMs("-1000")).toBe(null);
 });
 
-test("Invalid time type", () => {
+test("Invalid duration type", () => {
     expect(() => cssDurationToMs(null as unknown as string)).toThrowError();
     expect(() => cssDurationToMs(true as unknown as string)).toThrowError();
     expect(() => cssDurationToMs(false as unknown as string)).toThrowError();

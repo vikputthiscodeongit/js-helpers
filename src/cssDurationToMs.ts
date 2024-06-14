@@ -1,11 +1,11 @@
 import getCssUnit from "./getCssUnit.ts";
 
-function cssDurationToMs(time: string) {
-    if (typeof time !== "string") throw new Error("'time' must be of type String");
+function cssDurationToMs(duration: string) {
+    if (typeof duration !== "string") throw new Error("'duration' must be of type String");
 
-    const timeAsNumber = Number.parseFloat(time);
+    const timeAsNumber = Number.parseFloat(duration);
 
-    switch (getCssUnit(time)) {
+    switch (getCssUnit(duration)) {
         case "ms":
             return timeAsNumber;
 
