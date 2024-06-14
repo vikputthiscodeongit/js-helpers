@@ -117,7 +117,6 @@ If the given value has no or an unrecognized unit, the returned value will be `n
 * `h`: Hours
 * `d`: Days
 * `w`: Weeks
-* `y`: Years - **assumes 1 year = 365 days**
 
 #### Example
 ``` javascript
@@ -129,6 +128,9 @@ cssDurationToMs("0.25d");
 
 cssDurationToMs("-1w");
 // -604800000
+
+cssDurationToMs("1y");
+// null
 
 cssDurationToMs("1asdf");
 // null
@@ -301,6 +303,7 @@ All function parameters are now type checked on runtime.
 
 * `createEls()` > **Removed** - write this code yourself (it was just a for loop)
 * `getRandomIntUnder()` > **Removed** - use `getPseudoRandomIntBetween(0, x)` instead
+* `getCssUnit()` > **Breaking change** - `y` unit now returns null.
 
 <br>
 

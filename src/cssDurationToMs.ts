@@ -24,9 +24,6 @@ function cssDurationToMs(time: string) {
         case "w":
             return timeAsNumber * 604800000;
 
-        case "y":
-            return timeAsNumber * 31536000000;
-
         default:
             return null;
     }
