@@ -259,7 +259,7 @@ getPseudoRandomIntBetween(0, 10);
 <br>
 
 ### `isMotionAllowed()`
-Check if `prefers-reduced-motion` is set to something other than 'reduce'. Returns a `Boolean`.
+Check if `prefers-reduced-motion` is set to something other than `reduce`. Returns a `Boolean`.
 
 #### Example
 ``` javascript
@@ -304,23 +304,27 @@ await wait(5000, "5 seconds have passed", abortController.signal);
 ### From version 1
 All parameters for all functions except `fetchWithTimeout` and `wait` are now type checked on runtime.
 
-* `createEls()` > **Removed** - write this code yourself (it was just a for loop).
-* `getRandomIntUnder()` > **Removed** - use `getPseudoRandomIntBetween(0, x)` instead.
-* `getCssUnit()` > **Breaking change** - `y` unit now returns null.
-* `wait()` > **Breaking change** - `abortController` parameter has been changed to `abortSignal`.
+* __Removed__: `createEls()`
+  * Write this code yourself - it was just a `for` loop.
+* __Removed__: `getRandomIntUnder()`
+  * Use `getPseudoRandomIntBetween(0, x)` instead.
+* __Breaking change__: `getCssUnit()` - `y` unit now returns `null`.
+* __Breaking change__: `wait()` - `abortController` parameter has been changed to `abortSignal`.
 
 <br>
 
 ### From `@codebundlesbyvik/js-*-operations`
-* `createEls()` > **Removed**
-  * Write this code yourself - it was just a `for` loop.
-* `getPropValue()` > `getCssPropValue()`
-* `getRandomIntUnder()` > **Removed** - use `getPseudoRandomIntBetween(0, x)` instead.
-* `getUnit()` > `getCssUnit()`
-  * Only supports valid CSS units.
-* `timeToMs()` > `cssDurationToMs()`
+All parameters for all functions except `fetchWithTimeout` and `wait` are now type checked on runtime.
 
-Changes to existing functions are small; if you were using them as intended, migration should be free of issues. Any problems you do encounter should be easily fixable by the error thrown.
+* __Removed__: `createEls()`
+  * Write this code yourself - it was just a `for` loop.
+* __Removed__: `getRandomIntUnder()`
+  * Use `getPseudoRandomIntBetween(0, x)` instead.
+* __Renamed__: `getPropValue()` > `getCssPropValue()`
+* __Renamed__: `getUnit()` > `getCssUnit()`
+* __Renamed__: `timeToMs()` > `cssDurationToMs()`
+
+More changes were made other than the ones listed above. Problems caused by incompatible changes should be easy to debug by the error thrown.
 
 <br>
 
