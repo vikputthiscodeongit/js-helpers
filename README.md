@@ -11,8 +11,8 @@ JavaScript helper functions for various client sided operations, used across my 
 * [Installation](#installation)
 * [Functions](#functions)
   * [createEl](#createeltagname-attrs)
-  * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
   * [cssDurationToMs](#cssdurationtomsduration)
+  * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeoutduration)
   * [getAverage](#getaveragearray-round)
   * [getCssPropValue](#getcsspropvalueel-prop)
   * [getCssUnit](#getcssunitvalue)
@@ -60,8 +60,8 @@ import { getCssPropValue } from "@codebundlesbyvik/js-helpers";
 
 ## Functions
 * [createEl](#createeltagname-attrs)
-* [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
 * [cssDurationToMs](#cssdurationtomsduration)
+* [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeoutduration)
 * [getAverage](#getaveragearray-round)
 * [getCssPropValue](#getcsspropvalueel-prop)
 * [getCssUnit](#getcssunitvalue)
@@ -120,6 +120,9 @@ If the given value has no or an unrecognized unit, the returned value will be `n
 
 #### Example
 ``` javascript
+cssDurationToMs("150ms");
+// 150
+
 cssDurationToMs("2s");
 // 2000
 
@@ -187,7 +190,7 @@ getAverage([0.1, 0.33, 0.82, 1], "ceil");
 ### `getCssPropValue(el, prop)`
 Get an `Element`'s CSS property value.
 
-If the property is not set, the returned value will be `null`.
+If the property is not set or unknown, the returned value will be `null`.
 
 #### Parameters
 * **\*** `el` (`Element`): The target.
@@ -299,10 +302,10 @@ await wait(5000, "5 seconds have passed", abortController.signal);
 
 ## Migrating
 ### From version 1
-All function parameters are now type checked on runtime.
+All parameters for all functions except `fetchWithTimeout` and `wait` are now type checked on runtime.
 
-* `createEls()` > **Removed** - write this code yourself (it was just a for loop)
-* `getRandomIntUnder()` > **Removed** - use `getPseudoRandomIntBetween(0, x)` instead
+* `createEls()` > **Removed** - write this code yourself (it was just a for loop).
+* `getRandomIntUnder()` > **Removed** - use `getPseudoRandomIntBetween(0, x)` instead.
 * `getCssUnit()` > **Breaking change** - `y` unit now returns null.
 * `wait()` > **Breaking change** - `abortController` parameter has been changed to `abortSignal`.
 
@@ -310,10 +313,11 @@ All function parameters are now type checked on runtime.
 
 ### From `@codebundlesbyvik/js-*-operations`
 * `createEls()` > **Removed**
-  * Write this code yourself - it was just a for loop.
+  * Write this code yourself - it was just a `for` loop.
 * `getPropValue()` > `getCssPropValue()`
+* `getRandomIntUnder()` > **Removed** - use `getPseudoRandomIntBetween(0, x)` instead.
 * `getUnit()` > `getCssUnit()`
-* `getRandomIntUnder()` > **Removed** - use `getPseudoRandomIntBetween(0, x)` instead
+  * Only supports valid CSS units.
 * `timeToMs()` > `cssDurationToMs()`
 
 Changes to existing functions are small; if you were using them as intended, migration should be free of issues. Any problems you do encounter should be easily fixable by the error thrown.
@@ -321,4 +325,4 @@ Changes to existing functions are small; if you were using them as intended, mig
 <br>
 
 ## License
-MIT © 2023 [Viktor Chin-Kon-Sung](https://github.com/vikputthiscodeongit)
+MIT © 2024 [Viktor Chin-Kon-Sung](https://github.com/vikputthiscodeongit)
