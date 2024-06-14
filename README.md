@@ -18,7 +18,7 @@ JavaScript helper functions for various client sided operations, used across my 
   * [getCssUnit](#getcssunitvalue)
   * [getPseudoRandomIntBetween](#getpseudorandomintbetweenmin-max)
   * [isMotionAllowed](#ismotionallowed)
-  * [wait](#waitms-promiseresolvevalue-abortcontroller)
+  * [wait](#waitms-resolvevalue-abortsignal)
 * [Migrating](#migrating)
   * [From version 1](#from-version-1)
   * [From `@codebundlesbyvik/js-*-operations`](#from-codebundlesbyvikjs--operations)
@@ -67,7 +67,7 @@ import { getCssPropValue } from "@codebundlesbyvik/js-helpers";
 * [getCssUnit](#getcssunitvalue)
 * [getPseudoRandomIntBetween](#getpseudorandomintbetweenmin-max)
 * [isMotionAllowed](#ismotionallowed)
-* [wait](#waitms-promiseresolvevalue-abortcontroller)
+* [wait](#waitms-resolvevalue-abortsignal)
 
 <br>
 
@@ -275,15 +275,15 @@ isMotionAllowed();
 
 <br>
 
-### `wait(ms, promiseResolveValue, abortController)`
+### `wait(ms, resolveValue, abortSignal)`
 Wait for a given amount of time before continuing script execution.
 
-`setTimeout()` wrapped in a `Promise`, which is optionally resolved with `promiseResolveValue` and cancellable via an `AbortController`.
+`setTimeout()` wrapped in a `Promise`, which is optionally resolved with `resolveValue` and cancellable via an `AbortController`.
 
 #### Parameters
 * **\*** `ms` (`Number`): Time in milliseconds after which script execution will continue.
-* `promiseResolveValue` (`undefined` | Any valid `Promise.resolve()` value): Value which the promise will be resolved with.
-* `abortController` (`undefined | AbortController`): `AbortController` which the timeout can be cancelled with.
+* `resolveValue` (`undefined` | Any valid `Promise.resolve()` value): Value which the promise will be resolved with.
+* `abortSignal` (`undefined | AbortSignal`): `AbortController signal` which the timeout can be cancelled with.
 
 #### Example
 ``` javascript
@@ -292,7 +292,7 @@ await wait(3000);
 
 // Wait for 5 seconds before doing something else - or less if aborted earlier.
 const abortController = new AbortController();
-await wait(5000, "5 seconds have passed", abortController);
+await wait(5000, "5 seconds have passed", abortController.signal);
 ```
 
 <br>
@@ -304,6 +304,7 @@ All function parameters are now type checked on runtime.
 * `createEls()` > **Removed** - write this code yourself (it was just a for loop)
 * `getRandomIntUnder()` > **Removed** - use `getPseudoRandomIntBetween(0, x)` instead
 * `getCssUnit()` > **Breaking change** - `y` unit now returns null.
+* `wait()` > **Breaking change** - `abortController` parameter has been changed to `abortSignal`.
 
 <br>
 

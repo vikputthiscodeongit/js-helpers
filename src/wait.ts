@@ -1,27 +1,24 @@
 // Slightly modified version of https://stackoverflow.com/a/25345746.
 type PromiseResolveValue = Awaited<ReturnType<typeof Promise.resolve>>;
 
-function wait(
-    ms: number,
-    promiseResolveValue?: PromiseResolveValue,
-    abortController?: AbortController,
-) {
-    const signal = abortController?.signal;
-
+function wait(ms: number, resolveValue?: PromiseResolveValue, abortSignal?: AbortSignal) {
     return new Promise((resolve, reject) => {
         const listener = () => {
             clearTimeout(timer);
-            reject(signal?.reason);
+            reject(abortSignal?.reason);
         };
 
-        signal?.throwIfAborted();
+        abortSignal?.throwIfAborted();
 
-        const timer = setTimeout(() => {
-            signal?.removeEventListener("abort", listener);
-            resolve(promiseResolveValue);
-        }, ms);
+        const timer = setTimeout(
+            () => {
+                abortSignal?.removeEventListener("abort", listener);
+                resolve(resolveValue);
+            },
+            ms >= 0 ? ms : 0,
+        );
 
-        signal?.addEventListener("abort", listener);
+        abortSignal?.addEventListener("abort", listener);
     });
 }
 
