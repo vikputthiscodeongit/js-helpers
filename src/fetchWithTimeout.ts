@@ -1,14 +1,14 @@
 async function fetchWithTimeout(
     resource: RequestInfo | URL,
     fetchOptions?: RequestInit | undefined,
-    timeout?: number | undefined,
+    timeoutDuration?: number | undefined,
 ) {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), timeout || 8000);
+    const ac = new AbortController();
+    const timeoutId = setTimeout(() => ac.abort(), timeoutDuration || 8000);
 
     const response = await fetch(resource, {
         ...(fetchOptions || {}),
-        signal: controller.signal,
+        signal: ac.signal,
     });
     clearTimeout(timeoutId);
 

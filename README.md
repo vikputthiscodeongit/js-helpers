@@ -141,13 +141,13 @@ cssDurationToMs("20");
 
 <br>
 
-### `fetchWithTimeout(resource, fetchOptions, timeout)`
+### `fetchWithTimeout(resource, fetchOptions, timeoutDuration)`
 Make a `fetch()` call that's aborted by an `AbortController` after some amount of time.
 
 #### Parameters
 * **\*** `resource` (`RequestInfo | URL`): Location of the resource.
 * `fetchOptions` (`{} | RequestInit`): [Options accepted by `fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/fetch#options).
-* `timeout` (`8000 | Number`): Time in milliseconds after which `AbortController.abort()` is called and the `fetch()` is aborted.
+* `timeoutDuration` (`8000 | Number`): Time in milliseconds after which `AbortController.abort()` is called and the `fetch()` is aborted.
 
 #### Example
 ``` javascript
