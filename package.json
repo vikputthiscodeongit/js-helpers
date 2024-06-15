@@ -84,6 +84,8 @@
     "node": ">=12.22.0"
   },
   "browserslist": [
-    "> 0.2% and fully supports promise-finally"
+    "> 0.2% and fully supports promise-finally",
+    "last 3 versions and not dead",
+    "Firefox ESR"
   ]
 }
