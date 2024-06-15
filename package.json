@@ -80,9 +80,9 @@
     "typescript": "^5.4.5"
   },
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">=12.22.0"
   },
   "browserslist": [
-    "> 0.1% and fully supports async-functions"
+    "> 0.2% and fully supports promise-finally"
   ]
 }

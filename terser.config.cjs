@@ -40,7 +40,7 @@ const files = getAllFiles("./dist");
 const options = {
     compress: {
         drop_console: true,
-        ecma: 2017,
+        ecma: 2018,
         passes: 2,
     },
     mangle: false,

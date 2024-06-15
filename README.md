@@ -29,9 +29,9 @@ JavaScript helper functions for various client sided operations, used across my 
 ## Compatibility
 The distributables are compiled with the following `browserslist`:
 ```
-"> 0.1% and fully supports async-functions"
+"> 0.2% and fully supports promise-finally"
 ```
-Practically speaking, all popular browser versions released from the start of 2017 and onwards are supported.
+Practically speaking, all popular browser versions released from the start of 2020 and onwards are supported.
 
 <br>
 
