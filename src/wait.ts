@@ -1,7 +1,9 @@
 // Slightly modified version of https://stackoverflow.com/a/25345746.
-type PromiseResolveValue = Awaited<ReturnType<typeof Promise.resolve>>;
-
-function wait(ms: number, resolveValue?: PromiseResolveValue, abortSignal?: AbortSignal) {
+function wait(
+    ms: number,
+    resolveValue?: Awaited<ReturnType<typeof Promise.resolve>>,
+    abortSignal?: AbortSignal,
+) {
     return new Promise((resolve, reject) => {
         const listener = () => {
             clearTimeout(timer);

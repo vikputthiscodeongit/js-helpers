@@ -285,8 +285,8 @@ Wait for a given amount of time before continuing script execution.
 
 #### Parameters
 * **\*** `ms` (`Number`): Time in milliseconds after which script execution will continue.
-* `resolveValue` (`undefined` | Any valid `Promise.resolve()` value): Value which the promise will be resolved with.
-* `abortSignal` (`undefined | AbortSignal`): `AbortController signal` which the timeout can be cancelled with.
+* `resolveValue` (Any valid `Promise.resolve()` value): Value which the promise will be resolved with.
+* `abortSignal` (AbortSignal`): `AbortController signal` which the timeout can be cancelled with.
 
 #### Example
 ``` javascript
