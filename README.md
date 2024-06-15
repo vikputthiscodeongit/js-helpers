@@ -27,11 +27,7 @@ JavaScript helper functions for various client sided operations, used across my 
 <br>
 
 ## Compatibility
-The distributables are compiled with the following `browserslist`:
-```
-"> 0.2% and fully supports promise-finally"
-```
-Practically speaking, all popular browser versions released from the start of 2020 and onwards are supported.
+This package targets browsers with full ECMAScript 2018 (ES9) support. Practically speaking most browser versions released from the start of 2019 and onwards are supported.
 
 <br>
 
@@ -54,7 +50,7 @@ import { getCssPropValue } from "@codebundlesbyvik/js-helpers";
 <br>
 
 ### Without a module bundler
-[Download the latest release from GitHub](https://github.com/vikputthiscodeongit/js-helpers/releases/latest) and load the helpers you need as an ES Module. Some helpers require [`core-js` polyfills](https://github.com/zloirock/core-js/releases/latest), which are to be loaded from `./corejs/modules` - a directory whose location is relative to the one where the `js-helpers` are stored.
+[Download the latest release from GitHub](https://github.com/vikputthiscodeongit/js-helpers/releases/latest) and load the helpers you need as an ES Module. Some helpers may require [`core-js` polyfills](https://github.com/zloirock/core-js/releases/latest), which are to be loaded from `./corejs/modules` - a directory whose location is relative to the one where the `js-helpers` are stored.
 
 <br>
 
