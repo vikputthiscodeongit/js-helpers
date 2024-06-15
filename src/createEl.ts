@@ -1,4 +1,4 @@
-function createEl(tagName: string, attrs?: { [attr: string]: string | number | boolean | null }) {
+function createEl(tagName: string, attrs?: Record<string, string | number | boolean | null>) {
     if (typeof tagName !== "string") throw new Error("`tagName` must be a `String`.");
     if (attrs && typeof attrs !== "object") throw new Error("`attrs` must be an `Object`.");
 

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/prefer-promise-reject-errors */
+
 // Slightly modified version of https://stackoverflow.com/a/25345746.
 function wait(
     ms: number,

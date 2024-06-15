@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const config = (api) => {
     api.cache.invalidate(() => process.env.NODE_ENV);
 

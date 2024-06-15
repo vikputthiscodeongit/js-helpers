@@ -1,7 +1,5 @@
 // https://github.com/terser/terser/issues/544#issuecomment-598192241
 
-/* eslint-disable no-undef */
-/* eslint-disable @typescript-eslint/no-var-requires */
 const Terser = require("terser");
 const fs = require("fs");
 const path = require("path");
