@@ -71,7 +71,7 @@ import { getCssPropValue } from "@codebundlesbyvik/js-helpers";
 
 <br>
 
-* Required parameters are indicated with **\***.
+* Required parameters are indicated with __*__.
 * Default values for required parameters are listed first in the array of accepted parameter value types.
 
 <br>
@@ -80,7 +80,7 @@ import { getCssPropValue } from "@codebundlesbyvik/js-helpers";
 Create and return an `HTMLElement`.
 
 #### Parameters
-* **\*** `tagName` (`String`): The `HTMLElement`'s tag name.
+* __*__ `tagName` (`String`): The `HTMLElement`'s tag name.
 * `attrs` (`Object`): Individual attribute - value pairs to set on the `HTMLElement`.
 
 Special case is the `text` attribute. Use it to set the `HTMLElement`'s `textContent`.
@@ -148,7 +148,7 @@ cssDurationToMs("20");
 Make a `fetch()` call that's aborted by an `AbortController` after some amount of time.
 
 #### Parameters
-* **\*** `resource` (`RequestInfo | URL`): Location of the resource.
+* __*__ `resource` (`RequestInfo | URL`): Location of the resource.
 * `fetchOptions` (`{} | RequestInit`): [Options accepted by `fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/fetch#options).
 * `timeoutDuration` (`8000 | Number`): Time in milliseconds after which `AbortController.abort()` is called and the `fetch()` is aborted.
 
@@ -167,7 +167,7 @@ await fetchWithTimeout("https://example.com/api/endpoint", { method: "POST" }, 1
 Get the average of an array of `Number`s.
 
 #### Parameters
-* **\*** `array` (`Number[]`): Array to check.
+* __*__ `array` (`Number[]`): Array to check.
 * `round` (`"floor" | "ceil"`): Rounding method to apply to the average.
 
 #### Example
@@ -193,8 +193,8 @@ Get an `Element`'s CSS property value.
 If the property is not set or unknown, the returned value will be `null`.
 
 #### Parameters
-* **\*** `el` (`Element`): The target.
-* **\*** `prop` (`String`): `Element` property to retrieve.
+* __*__ `el` (`Element`): The target.
+* __*__ `prop` (`String`): `Element` property to retrieve.
 
 #### Example
 ``` javascript
@@ -243,12 +243,12 @@ getCssUnit("100");
 ### `getPseudoRandomIntBetween(min, max)`
 Generate and return a positive pseudo-random integer between two given integers.
 
-⚠️ **Makes use of [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random), which ISN'T cryptographically secure. You WILL BE FIRED if you misuse this function in an attempt to generate secure, random integers.** ⚠️
+⚠️ __Makes use of [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random), which ISN'T cryptographically secure. YOU WILL BE FIRED if you misuse this function in an attempt to generate secure, random integers.__ ⚠️
 
 #### Parameters
 - None
-* **\*** `min` (`Number`): Positive integer relative to which the returned integer will be equal to or greater than.
-* **\*** `max` (`Number`): Positive integer relative to which the returned integer will be smaller than.
+* __*__ `min` (`Number`): Positive integer relative to which the returned integer will be equal to or greater than.
+* __*__ `max` (`Number`): Positive integer relative to which the returned integer will be smaller than.
 
 #### Example
 ```javascript
@@ -284,7 +284,7 @@ Wait for a given amount of time before continuing script execution.
 `setTimeout()` wrapped in a `Promise`, which is optionally resolved with `resolveValue` and cancellable via an `AbortController`.
 
 #### Parameters
-* **\*** `ms` (`Number`): Time in milliseconds after which script execution will continue.
+* __*__ `ms` (`Number`): Time in milliseconds after which script execution will continue.
 * `resolveValue` (Any valid `Promise.resolve()` value): Value which the promise will be resolved with.
 * `abortSignal` (AbortSignal`): `AbortController signal` which the timeout can be cancelled with.
 
