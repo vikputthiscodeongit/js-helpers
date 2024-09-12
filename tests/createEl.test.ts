@@ -31,7 +31,7 @@ test("Valid tagName, valid attrs items (type String and Boolean)", () => {
         id: false,
         disabled: true,
         dataValue: null,
-        text: "Some textContent for the element",
+        textContent: "Some textContent for the element",
     });
 
     expect(el.tagName).toBe("INPUT");

@@ -17,7 +17,7 @@ function createEl(tagName: string, attrs?: Record<string, string | number | bool
             const val =
                 typeof rawVal === "number" || typeof rawVal === "boolean" ? String(rawVal) : rawVal;
 
-            if (prop === "text") {
+            if (prop === "textContent") {
                 el.textContent = val;
 
                 continue;

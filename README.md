@@ -79,7 +79,7 @@ Create and return an `HTMLElement`.
 * __*__ `tagName` (`String`): The `HTMLElement`'s tag name.
 * `attrs` (`Object`): Individual attribute - value pairs to set on the `HTMLElement`.
 
-Special case is the `text` attribute. Use it to set the `HTMLElement`'s `textContent`.
+Special case is the `textContent` attribute. Use it to set the `HTMLElement`'s `textContent`.
 
 #### Example
 ```javascript
@@ -87,7 +87,7 @@ const ATTRS = {
     class: "example-div",
     id: "example-div-1",
     ariaHidden: "true",
-    text: "This is an example."
+    textContent: "This is an example."
 };
 
 createEl("div", ATTRS);
