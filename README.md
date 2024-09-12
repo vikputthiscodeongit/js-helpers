@@ -2,7 +2,7 @@
 [![npm](https://img.shields.io/npm/v/@codebundlesbyvik/js-helpers)](https://www.npmjs.com/package/@codebundlesbyvik/js-helpers)
 [![npm - downloads per week](https://img.shields.io/npm/dw/@codebundlesbyvik/js-helpers)](https://www.npmjs.com/package/@codebundlesbyvik/js-helpers)
 
-JavaScript helper functions for various client sided operations, used across my projects.
+JavaScript helper functions for various operations, used across my projects.
 
 <br>
 
@@ -27,7 +27,9 @@ JavaScript helper functions for various client sided operations, used across my 
 <br>
 
 ## Compatibility
-This package targets browsers with full ECMAScript 2018 (ES9) support. Practically speaking most browser versions released from the start of 2019 and onwards are supported.
+All helpers are compatible with the ECMAScript 2015 (ES6) specification except for that of `fetchWithTimeout`, which is an `async` function and thus requires an ECMAScript 2017 (ES8) compatible environment.
+
+Some helpers utilize DOM methods and thus can only be used in an environment that supports these.
 
 <br>
 
@@ -50,7 +52,7 @@ import { getCssPropValue } from "@codebundlesbyvik/js-helpers";
 <br>
 
 ### Without a module bundler
-[Download the latest release from GitHub](https://github.com/vikputthiscodeongit/js-helpers/releases/latest) and load the helpers you need as an ES Module. Some helpers may require [`core-js` polyfills](https://github.com/zloirock/core-js/releases/latest), which are to be loaded from `./corejs/modules` - a directory whose location is relative to the one where the `js-helpers` are stored.
+[Download the latest release from GitHub](https://github.com/vikputthiscodeongit/js-helpers/releases/latest) and import the helpers you need as an ES Module.
 
 <br>
 
