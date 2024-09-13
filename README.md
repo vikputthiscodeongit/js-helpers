@@ -2,7 +2,7 @@
 [![npm](https://img.shields.io/npm/v/@codebundlesbyvik/js-helpers)](https://www.npmjs.com/package/@codebundlesbyvik/js-helpers)
 [![npm - downloads per week](https://img.shields.io/npm/dw/@codebundlesbyvik/js-helpers)](https://www.npmjs.com/package/@codebundlesbyvik/js-helpers)
 
-JavaScript helper functions for various operations, used across my projects.
+0-dependency JavaScript helper functions for various operations, used across my projects.
 
 <br>
 
