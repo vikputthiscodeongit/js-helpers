@@ -25,5 +25,5 @@ Thumbs.db
 
 # Track build tooling files
 !.git*
-!eslint*
 !.prettier*
+!eslint*

@@ -20,7 +20,6 @@ export default tsEslint.config(
                 ...globals.browser,
                 ...globals.es2024,
             },
-
             parserOptions: {
                 project: ["tsconfig.json"],
             },
