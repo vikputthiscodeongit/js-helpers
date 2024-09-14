@@ -2,40 +2,39 @@
 [![npm](https://img.shields.io/npm/v/@codebundlesbyvik/js-helpers)](https://www.npmjs.com/package/@codebundlesbyvik/js-helpers)
 [![npm - downloads per week](https://img.shields.io/npm/dw/@codebundlesbyvik/js-helpers)](https://www.npmjs.com/package/@codebundlesbyvik/js-helpers)
 
-JavaScript helper functions for various operations, used across my projects.
+0-dependency JavaScript helper functions for various operations, used across my projects.
 
 <br>
 
 ## Table of Contents
 * [Compatibility](#compatibility)
-* [Installation](#installation)
+* [Usage](#usage)
 * [Functions](#functions)
   * [createEl](#createeltagname-attrs)
-  * [createEls](#createelselskeletons)
-  * [cssTimeToMs](#csstimetomstime)
-  * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
+  * [cssDurationToMs](#cssdurationtomsduration)
+  * [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeoutduration)
   * [getAverage](#getaveragearray-round)
+  * [getCssPropValue](#getcsspropvalueel-prop)
   * [getCssUnit](#getcssunitvalue)
-  * [getElPropValue](#getelpropvalueel-prop)
+  * [getPseudoRandomIntBetween](#getpseudorandomintbetweenmin-max)
   * [isMotionAllowed](#ismotionallowed)
-  * [wait](#waitms)
-* [Migrating from `@codebundlesbyvik/js-*-operations`](#migrating-from-codebundlesbyvikjs--operations)
-  * [Renamed functions](#renamed-functions)
+  * [wait](#waitms-resolvevalue-abortsignal)
+* [Migrating](#migrating)
+  * [From version 1](#from-version-1)
+  * [From `@codebundlesbyvik/js-*-operations`](#from-codebundlesbyvikjs--operations)
 * [License](#license)
 
 <br>
 
 ## Compatibility
-The distributables are compiled with the following `browserslist`:
-```
-"> 0.1% and fully supports object-entries"
-```
-Practically speaking, all popular browser versions released after H2 2016 are supported.
+All helpers are compatible with the ECMAScript 2015 (ES6) specification except for `fetchWithTimeout`, which is an `async` function and thus requires an ECMAScript 2017 (ES8) compatible environment.
+
+Some helpers utilize DOM methods and thus can only be used in an environment that supports them.
 
 <br>
 
-## Installation
-### Usage within the Node.js ecosystem
+## Usage
+### With a module bundler
 Install the package with npm.
 
 ``` shell
@@ -45,44 +44,32 @@ npm install @codebundlesbyvik/js-helpers
 Import the helpers you need...
 
 ``` javascript
-import { getElPropValue, isMotionAllowed } from "@codebundlesbyvik/js-helpers";
+import { getCssPropValue } from "@codebundlesbyvik/js-helpers";
 ```
 
-...or import the bundle in its entirety.
-
-``` javascript
-import * as helpers from "@codebundlesbyvik/js-helpers";
-```
+... and compile your project with a module bundler.
 
 <br>
 
-### Standalone usage
-[Download the latest release from GitHub](https://github.com/vikputthiscodeongit/js-helpers/releases/latest).
-
-Then you can either:
-* Use the UMD bundle, or
-* Import the helpers you need from the index file, or
-* Import the helpers you need seperately.
-
-The UMD bundle has the required `core-js` polyfills inlined.<br>
-If you use the module files then you'll need to include the required [`core-js` polyfills](https://github.com/zloirock/core-js/releases/latest) yourself. These are loaded from a subdirectory `corejs/modules`, whose location should be relative to the directory where the `js-helpers` files are stored.
+### Without a module bundler
+[Download the latest release from GitHub](https://github.com/vikputthiscodeongit/js-helpers/releases/latest) and import the helpers you need as an ES Module.
 
 <br>
 
 ## Functions
 * [createEl](#createeltagname-attrs)
-* [createEls](#createelselskeletons)
-* [cssTimeToMs](#csstimetomstime)
-* [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeout)
+* [cssDurationToMs](#cssdurationtomsduration)
+* [fetchWithTimeout](#fetchwithtimeoutresource-fetchoptions-timeoutduration)
 * [getAverage](#getaveragearray-round)
+* [getCssPropValue](#getcsspropvalueel-prop)
 * [getCssUnit](#getcssunitvalue)
-* [getElPropValue](#getelpropvalueel-prop)
+* [getPseudoRandomIntBetween](#getpseudorandomintbetweenmin-max)
 * [isMotionAllowed](#ismotionallowed)
-* [wait](#waitms)
+* [wait](#waitms-resolvevalue-abortsignal)
 
 <br>
 
-* Required parameters are indicated with **\***.
+* Required parameters are indicated with __*__.
 * Default values for required parameters are listed first in the array of accepted parameter value types.
 
 <br>
@@ -91,10 +78,10 @@ If you use the module files then you'll need to include the required [`core-js` 
 Create and return an `HTMLElement`.
 
 #### Parameters
-* **\*** `tagName` (`String`): The `HTMLElement`'s tag name.
+* __*__ `tagName` (`String`): The `HTMLElement`'s tag name.
 * `attrs` (`Object`): Individual attribute - value pairs to set on the `HTMLElement`.
 
-Special case is the `text` attribute. Use it to set the `HTMLElement`'s `textContent`.
+Special case is the `textContent` attribute. Use it to set the `HTMLElement`'s `textContent`.
 
 #### Example
 ```javascript
@@ -102,7 +89,7 @@ const ATTRS = {
     class: "example-div",
     id: "example-div-1",
     ariaHidden: "true",
-    text: "This is an example."
+    textContent: "This is an example."
 };
 
 createEl("div", ATTRS);
@@ -114,59 +101,13 @@ createEl("div", ATTRS);
 
 <br>
 
-### `createEls(elSkeletons)`
-Create and return an object of `HTMLElement`s.
+### `cssDurationToMs(duration)`
+Convert a CSS-style time duration value to a `Number` of milliseconds.
+
+If the given value has no or an unrecognized unit, the returned value will be `null`.
 
 #### Parameters
-* **\*** `elSkeletons` (`Object`): An object that consists of multiple [createEl](#createeltagname-attrs) `tagName` / `attrs` entries.
-
-#### Example
-```javascript
-const SKELETONS = {
-    fieldset: {
-        el: "fieldset",
-    },
-    field: {
-        el: "div",
-        attrs: {
-            class: "field",
-        },
-    },
-    label: {
-        el: "label",
-        attrs: {
-            for: "example-input"
-        }
-    },
-    input: {
-        el: "input",
-        attrs: {
-            id: "example-input",
-            name: "example-input",
-            placeholder: "Example input",
-        }
-    }
-};
-
-createEls(SKELETONS);
-
-// {
-//     fieldset: <fieldset></fieldset>,
-//     field: <div class="field"></div>,
-//     label: <label for="example-input"></label>,
-//     input: <input id="example-input" name="example-input" placeholder="Example input" />
-// }
-```
-
-<br>
-
-### `cssTimeToMs(time)`
-Convert a 'CSS-style time' to a `Number` of milliseconds.
-
-If the given value is unitless, it'll be returned as-is. If it has an unrecognized unit, the returned value will be `null`.
-
-#### Parameters
-* `time` (`String`): 'CSS-style' time duration.
+* `duration` (`String`): 'CSS-style' time duration.
 
 #### Supported units
 * `ms`: Milliseconds
@@ -174,40 +115,48 @@ If the given value is unitless, it'll be returned as-is. If it has an unrecogniz
 * `h`: Hours
 * `d`: Days
 * `w`: Weeks
-* `y`: Years - **assumes 1 year = 365 days**
 
 #### Example
 ``` javascript
-cssTimeToMs("2s");
+cssDurationToMs("150ms");
+// 150
+
+cssDurationToMs("2s");
 // 2000
 
-cssTimeToMs("0.25d");
+cssDurationToMs("0.25d");
 // 21600000
 
-cssTimeToMs("-1w");
+cssDurationToMs("-1w");
 // -604800000
 
-cssTimeToMs("1asdf");
+cssDurationToMs("1y");
 // null
 
-cssTimeToMs("20");
-// 20
+cssDurationToMs("1asdf");
+// null
+
+cssDurationToMs("20");
+// null
 ```
 
 <br>
 
-### `fetchWithTimeout(resource, fetchOptions, timeout)`
-Make a `fetch()` call that's aborted by an `AbortController` after a given amount of time.
+### `fetchWithTimeout(resource, fetchOptions, timeoutDuration)`
+Make a `fetch()` call that's aborted by an `AbortController` after some amount of time.
 
 #### Parameters
-* **\*** `resource` (`RequestInfo | URL`): Location of the resource.
+* __*__ `resource` (`RequestInfo | URL`): Location of the resource.
 * `fetchOptions` (`{} | RequestInit`): [Options accepted by `fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/fetch#options).
-* `timeout` (`8000 | Number`): Time in milliseconds after which `AbortController.abort()` is called and the `fetch()` is aborted.
+* `timeoutDuration` (`8000 | Number`): Time in milliseconds after which `AbortController.abort()` is called and the `fetch()` is aborted.
 
 #### Example
 ``` javascript
-// Make a GET request that's aborted if no response is returned within 10 seconds.
-await fetchWithTimeout("target-resource-url", { method: "GET" }, 10000);
+// Make a GET request that's aborted if no response is returned within 8 seconds.
+await fetchWithTimeout("https://example.com/api/endpoint");
+
+// Make a POST request that's aborted if no response is returned within 10 seconds.
+await fetchWithTimeout("https://example.com/api/endpoint", { method: "POST" }, 10000);
 ```
 
 <br>
@@ -216,8 +165,8 @@ await fetchWithTimeout("target-resource-url", { method: "GET" }, 10000);
 Get the average of an array of `Number`s.
 
 #### Parameters
-* **\*** `array` (`Number[]`): Array to check.
-* `round` (`false | "floor" | "ceil"`): Rounding method to apply to the average.
+* __*__ `array` (`Number[]`): Array to check.
+* `round` (`"floor" | "ceil"`): Rounding method to apply to the average.
 
 #### Example
 ``` javascript
@@ -236,10 +185,41 @@ getAverage([0.1, 0.33, 0.82, 1], "ceil");
 
 <br>
 
+### `getCssPropValue(el, prop)`
+Get an `Element`'s CSS property value.
+
+If the property is not set or unknown, the returned value will be `null`.
+
+#### Parameters
+* __*__ `el` (`Element`): The target.
+* __*__ `prop` (`String`): `Element` property to retrieve.
+
+#### Example
+``` javascript
+const el = document.querySelector("#example-div-1");
+// Has the following properties set:
+// margin-bottom: 0.75rem;
+// background-color: black;
+
+getCssPropValue(el, "margin-bottom");
+// "0.75rem"
+
+getCssPropValue(el, "background-color");
+// "black"
+
+getCssPropValue(el, "box-shadow");
+// null
+
+getCssPropValue(el, "non-existent");
+// null
+```
+
+<br>
+
 ### `getCssUnit(value)`
 Get the unit of a quantitative 'CSS-style' value.
 
-If the given value has no unit, the returned value will be `null`.
+If the value has no unit, the returned value will be `null`.
 
 #### Parameters
 * `value` (`String`): 'CSS-style' value to get the unit from.
@@ -258,59 +238,26 @@ getCssUnit("100");
 
 <br>
 
-### `getElPropValue(el, prop)`
-Get an `Element`'s CSS property value.
+### `getPseudoRandomIntBetween(min, max)`
+Generate and return a positive pseudo-random integer between two given integers.
 
-If the given property is not set, the returned value will be `null`.
-
-#### Parameters
-* **\*** `el` (`Element`): The target.
-* **\*** `prop` (`String`): `Element` property to retrieve.
-
-#### Example
-``` javascript
-const el = document.querySelector("#example-div-1");
-// Has the following properties set:
-// margin-bottom: 0.75rem;
-// background-color: black;
-
-getElPropValue(el, "margin-bottom");
-// "0.75rem"
-
-getElPropValue(el, "background-color");
-// "black"
-
-getElPropValue(el, "non-existent");
-// null
-```
-
-<br>
-
-### `getPseudoRandomIntBelow(max, includeMax)`
-Generate and return a pseudo-random integer below a given integer.
-
-⚠️ **Makes use of [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random), which ISN'T cryptographically secure. You WILL BE FIRED if you misuse this function in an attempt to generate secure, random integers.** ⚠️
+⚠️ __Makes use of [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random), which ISN'T cryptographically secure. YOU WILL BE FIRED if you misuse this function in an attempt to generate secure, random integers.__ ⚠️
 
 #### Parameters
-* **\*** `max` (`Number`): Depending on `includeMax`, the returned integer will be either equal to or below this number.
-* `includeMax` (`false | Boolean`): Whether or not to include `max` when generating the integer.
+- None
+* __*__ `min` (`Number`): Positive integer relative to which the returned integer will be equal to or greater than.
+* __*__ `max` (`Number`): Positive integer relative to which the returned integer will be smaller than.
 
 #### Example
 ```javascript
-getPseudoRandomIntBelow(10);
+getPseudoRandomIntBetween(0, 10);
 // 7
-
-getPseudoRandomIntBelow(10, true);
-// 10
 ```
 
 <br>
 
 ### `isMotionAllowed()`
-Check if `prefers-reduced-motion` is set to something other than 'reduce'. Returns a `Boolean`.
-
-#### Parameters
-- None
+Check if `prefers-reduced-motion` is set to something other than `reduce`. Returns a `Boolean`.
 
 #### Example
 ``` javascript
@@ -329,37 +276,55 @@ isMotionAllowed();
 
 <br>
 
-### `wait(ms)`
-Wait for a certain amount of time before continuing script execution.
+### `wait(ms, resolveValue, abortSignal)`
+Wait for a given amount of time before continuing script execution.
+
+`setTimeout()` wrapped in a `Promise`, which is optionally resolved with `resolveValue` and cancellable via an `AbortController`.
 
 #### Parameters
-* **\*** `ms` (`Number`): Duration after which script execution will continue.
+* __*__ `ms` (`Number`): Time in milliseconds after which script execution will continue.
+* `resolveValue` (Any valid `Promise.resolve()` value): Value which the promise will be resolved with.
+* `abortSignal` (AbortSignal`): `AbortController signal` which the timeout can be cancelled with.
 
 #### Example
 ``` javascript
 // Wait for 3 seconds before doing something else.
 await wait(3000);
+
+// Wait for 5 seconds before doing something else - or less if aborted earlier.
+const abortController = new AbortController();
+await wait(5000, "5 seconds have passed", abortController.signal);
 ```
 
 <br>
 
-## Migrating from `@codebundlesbyvik/js-*-operations`
-In case anyone was actually using any of my previous, now deprecated JavaScript helper packages: here's how to make a smooth transition.
+## Migrating
+### From version 1
+All parameters for all functions except `fetchWithTimeout` and `wait` are now type checked on runtime.
 
-* **Functions that already existed haven't undergone breaking changes.**
-  * Any new features aren't breaking.
-* **Some functions have been renamed.**
+* __Removed__: `createEls()`
+  * Write this code yourself - it was just a `for` loop.
+* __Removed__: `getRandomIntUnder()`
+  * Use `getPseudoRandomIntBetween(0, x)` instead.
+* __Breaking change__: `getCssUnit()` - `y` unit now returns `null`.
+* __Breaking change__: `wait()` - `abortController` parameter has been changed to `abortSignal`.
 
-So in the worst case, all you need to do is update your imports.
+<br>
 
-### Renamed functions
-* `getPropValue()` > `getElPropValue()`
-* `getRandomIntUnder()` > `getPseudoRandomIntBelow()`
-* `getUnit()` > `getCssUnit()`
-* `motionAllowed()` > `isMotionAllowed()`
-* `timeToMs()` > `cssTimeToMs()`
+### From `@codebundlesbyvik/js-*-operations`
+All parameters for all functions except `fetchWithTimeout` and `wait` are now type checked on runtime.
+
+* __Removed__: `createEls()`
+  * Write this code yourself - it was just a `for` loop.
+* __Removed__: `getRandomIntUnder()`
+  * Use `getPseudoRandomIntBetween(0, x)` instead.
+* __Renamed__: `getPropValue()` > `getCssPropValue()`
+* __Renamed__: `getUnit()` > `getCssUnit()`
+* __Renamed__: `timeToMs()` > `cssDurationToMs()`
+
+More changes were made other than the ones listed above. Problems caused by incompatible changes should be easy to debug by the error thrown.
 
 <br>
 
 ## License
-MIT © 2023 [Viktor Chin-Kon-Sung](https://github.com/vikputthiscodeongit)
+MIT © 2024 [Viktor Chin-Kon-Sung](https://github.com/vikputthiscodeongit)

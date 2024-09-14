@@ -1,1 +1,1 @@
-function wait(ms){return new Promise((resolve=>setTimeout(resolve,ms)))}export{wait as default};
+function wait(ms,resolveValue,abortSignal){return new Promise(((resolve,reject)=>{const listener=()=>{clearTimeout(timer),reject(null==abortSignal?void 0:abortSignal.reason)};null==abortSignal||abortSignal.throwIfAborted();const timer=setTimeout((()=>{null==abortSignal||abortSignal.removeEventListener("abort",listener),resolve(resolveValue)}),ms>=0?ms:0);null==abortSignal||abortSignal.addEventListener("abort",listener)}))}export{wait as default};

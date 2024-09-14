@@ -1,7 +1,3 @@
-type ElAttrs = {
-    [key: string]: string;
-};
-type ElTagName = string;
-declare function createEl(tagName: ElTagName, attrs?: ElAttrs | undefined): HTMLElement;
-export { createEl as default, type ElAttrs, type ElTagName };
+declare function createEl(tagName: string, attrs?: Record<string, string | number | boolean | null>): HTMLElement;
+export { createEl as default };
 //# sourceMappingURL=createEl.d.ts.map

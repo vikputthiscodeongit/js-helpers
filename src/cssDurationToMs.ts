@@ -1,10 +1,11 @@
 import getCssUnit from "./getCssUnit.ts";
 
-function cssTimeToMs(time: string) {
-    const timeAsNumber = Number.parseFloat(time);
+function cssDurationToMs(duration: string) {
+    if (typeof duration !== "string") throw new Error("`duration` must be of type `String`.");
 
-    switch (getCssUnit(time)) {
-        case null:
+    const timeAsNumber = Number.parseFloat(duration);
+
+    switch (getCssUnit(duration)) {
         case "ms":
             return timeAsNumber;
 
@@ -23,12 +24,9 @@ function cssTimeToMs(time: string) {
         case "w":
             return timeAsNumber * 604800000;
 
-        case "y":
-            return timeAsNumber * 31536000000;
-
         default:
             return null;
     }
 }
 
-export { cssTimeToMs as default };
+export { cssDurationToMs as default };

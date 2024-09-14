@@ -1,6 +1,6 @@
-/* eslint-disable no-undef */
 const config = {
-    preset: "ts-jest",
+    preset: "ts-jest/presets/default-esm",
+    testEnvironment: "jest-environment-jsdom",
 };
 
 module.exports = config;

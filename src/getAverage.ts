@@ -1,9 +1,10 @@
-function getAverage(array: number[], round?: false | "floor" | "ceil" | undefined) {
-    if (!round) {
-        round = false;
-    }
+function getAverage(numbers: number[], round?: "floor" | "ceil") {
+    if (!Array.isArray(numbers)) throw new Error("`numbers` must be an `Array`.");
+    if (round && typeof round !== "string") throw new Error("`round` value is invalid.");
 
-    const average = array.reduce((prev, cur) => prev + cur, 0) / array.length;
+    const average = numbers.reduce((prev, cur) => prev + cur, 0) / numbers.length;
+
+    if (Number.isNaN(average)) throw new Error("Each item in `numbers` must be a `Number`.");
 
     switch (round) {
         case "floor":
