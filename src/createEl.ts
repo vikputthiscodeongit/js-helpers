@@ -13,9 +13,17 @@ function createEl(tagName: string, attrs?: Record<string, string | number | bool
                 (typeof rawVal !== "string" &&
                     typeof rawVal !== "number" &&
                     typeof rawVal !== "boolean") ||
-                rawVal === false
-            )
+                rawVal === false ||
+                rawVal === null
+            ) {
+                if (rawVal !== false && rawVal !== null) {
+                    console.warn(
+                        `Property of unsupported type ${Array.isArray(rawVal) ? "array" : typeof rawVal} will be ignored.`,
+                    );
+                }
+
                 continue;
+            }
 
             const val = rawVal.toString();
 
