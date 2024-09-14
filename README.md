@@ -143,7 +143,7 @@ cssDurationToMs("20");
 <br>
 
 ### `fetchWithTimeout(resource, fetchOptions, timeoutDuration)`
-Make a `fetch()` call that's aborted by an `AbortController` after some amount of time.
+Make a `fetch()` call that's aborted by an `AbortController` after a specified amount of time.
 
 #### Parameters
 * __*__ `resource` (`RequestInfo | URL`): Location of the resource.
