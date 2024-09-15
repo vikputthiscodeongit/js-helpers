@@ -6,6 +6,8 @@ function wait(
     resolveValue?: Awaited<ReturnType<typeof Promise.resolve>>,
     abortSignal?: AbortSignal,
 ) {
+    if (typeof duration !== "number") throw new Error("`time` must be a `Number`.");
+
     return new Promise((resolve, reject) => {
         const listener = () => {
             clearTimeout(timer);
