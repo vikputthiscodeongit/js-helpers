@@ -284,7 +284,7 @@ Wait for a given amount of time before continuing script execution.
 #### Parameters
 * __*__ `duration` (`Number`): Time in milliseconds after which script execution will continue.
 * `resolveValue` (Any valid `Promise.resolve()` value): Value which the promise will be resolved with.
-* `abortSignal` (AbortSignal`): `AbortController signal` which the timeout can be cancelled with.
+* `abortSignal` (`AbortSignal`): `AbortController.signal` which the timeout can be cancelled with.
 
 #### Example
 ``` javascript
@@ -302,25 +302,25 @@ await wait(5000, "5 seconds have passed", abortController.signal);
 ### From version 1
 Function parameters are now type checked.
 
-* __Removed__: `createEls()`
-  * Write this code yourself - it was just a `for` loop.
-* __Removed__: `getRandomIntUnder()`
-  * Use `getPseudoRandomIntBetween(0, x)` instead.
-* __Breaking change__: `getCssUnit()` - `y` unit now returns `null`.
-* __Breaking change__: `wait()` - `abortController` parameter has been changed to `abortSignal`.
+* __Removed__:
+  * `createEls()`: Write this code yourself - it was just a `for` loop.
+  * `getRandomIntUnder()`:  Use `getPseudoRandomIntBetween(0, x)` instead.
+* __Breaking change__:
+  * `getCssUnit()`: Removed support for `y` unit - will now return `null`.
+  * `wait()`: Now takes in an `abortSignal` instead of an `abortController`.
 
 <br>
 
 ### From `@codebundlesbyvik/js-*-operations`
-
-* __Removed__: `createEls()`
-  * Write this code yourself - it was just a `for` loop.
-* __Removed__: `getRandomIntUnder()`
-  * Use `getPseudoRandomIntBetween(0, x)` instead.
-* __Renamed__: `getPropValue()` > `getCssPropValue()`
-* __Renamed__: `getUnit()` > `getCssUnit()`
-* __Renamed__: `timeToMs()` > `cssDurationToMs()`
 Function parameters are now type checked.
+
+* __Removed__:
+  * `createEls()`: Write this code yourself - it was just a `for` loop.
+  * `getRandomIntUnder()`: Use `getPseudoRandomIntBetween(0, x)` instead.
+* __Renamed__:
+  * `getPropValue()` > `getCssPropValue()`
+  * `getUnit()` > `getCssUnit()`
+  * `timeToMs()` > `cssDurationToMs()`
 
 More changes were made other than the ones listed above. Problems caused by incompatible changes should be easy to debug by the error thrown.
 
