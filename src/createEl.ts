@@ -1,11 +1,11 @@
-// TODO:
-// * Should accept a generic, like querySelector.
-// * Add attribute typings?
-function createEl(tagName: string, attrs?: Record<string, string | number | boolean | null>) {
+function createEl<T extends HTMLElement>(
+    tagName: string,
+    attrs?: Record<string, string | number | boolean | null>,
+) {
     if (typeof tagName !== "string") throw new Error("`tagName` must be a `String`.");
     if (attrs && typeof attrs !== "object") throw new Error("`attrs` must be an `Object`.");
 
-    const el = document.createElement(tagName);
+    const el = document.createElement(tagName) as T;
 
     if (attrs) {
         for (const [prop, rawVal] of Object.entries(attrs)) {
