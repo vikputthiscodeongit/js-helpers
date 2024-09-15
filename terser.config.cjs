@@ -1,7 +1,5 @@
 // https://github.com/terser/terser/issues/544#issuecomment-598192241
 
-/* eslint-disable no-undef */
-/* eslint-disable @typescript-eslint/no-var-requires */
 const Terser = require("terser");
 const fs = require("fs");
 const path = require("path");
@@ -23,13 +21,8 @@ function getAllFiles(dirPath, arrayOfFiles) {
 }
 
 async function minifyFiles(filePaths, terserOptions) {
-    console.log("Running Terser...");
-
-    console.log("Included files:");
+    console.log("Running Terser on the following files:");
     console.log(filePaths);
-
-    console.log("Set options:");
-    console.log(terserOptions);
 
     await Promise.all(
         filePaths.map(async (filePath) => {
@@ -45,7 +38,7 @@ const files = getAllFiles("./dist");
 const options = {
     compress: {
         drop_console: true,
-        ecma: 5,
+        ecma: 2018,
         passes: 2,
     },
     mangle: false,

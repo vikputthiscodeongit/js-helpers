@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const config = (api) => {
     api.cache.invalidate(() => process.env.NODE_ENV);
 
@@ -8,8 +7,6 @@ const config = (api) => {
                 "@babel/preset-env",
                 {
                     modules: false,
-                    useBuiltIns: "usage",
-                    corejs: { version: "3.33" },
                 },
             ],
             [
@@ -19,6 +16,7 @@ const config = (api) => {
                 },
             ],
         ],
+        parserOpts: { strictMode: true },
     };
 };
 

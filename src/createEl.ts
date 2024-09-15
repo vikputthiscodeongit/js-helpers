@@ -1,12 +1,33 @@
-type ElAttrs = { [key: string]: string };
-type ElTagName = string;
+// TODO:
+// * Should accept a generic, like querySelector.
+// * Add attribute typings?
+function createEl(tagName: string, attrs?: Record<string, string | number | boolean | null>) {
+    if (typeof tagName !== "string") throw new Error("`tagName` must be a `String`.");
+    if (attrs && typeof attrs !== "object") throw new Error("`attrs` must be an `Object`.");
 
-function createEl(tagName: ElTagName, attrs?: ElAttrs | undefined) {
     const el = document.createElement(tagName);
 
     if (attrs) {
-        for (const [prop, val] of Object.entries(attrs)) {
-            if (prop === "text") {
+        for (const [prop, rawVal] of Object.entries(attrs)) {
+            if (
+                (typeof rawVal !== "string" &&
+                    typeof rawVal !== "number" &&
+                    typeof rawVal !== "boolean") ||
+                rawVal === false ||
+                rawVal === null
+            ) {
+                if (rawVal !== false && rawVal !== null) {
+                    console.warn(
+                        `Property of unsupported type ${Array.isArray(rawVal) ? "array" : typeof rawVal} will be ignored.`,
+                    );
+                }
+
+                continue;
+            }
+
+            const val = rawVal.toString();
+
+            if (prop === "textContent") {
                 el.textContent = val;
 
                 continue;
@@ -20,4 +41,4 @@ function createEl(tagName: ElTagName, attrs?: ElAttrs | undefined) {
     return el;
 }
 
-export { createEl as default, type ElAttrs, type ElTagName };
+export { createEl as default };
