@@ -3,6 +3,9 @@ async function fetchWithTimeout(
     fetchOptions?: RequestInit,
     timeoutDuration?: number,
 ) {
+    if (typeof timeoutDuration !== "number")
+        throw new Error("`timeoutDuration` must be a `Number`.");
+
     const ac = new AbortController();
     const options = fetchOptions ? Object.assign({}, fetchOptions) : {};
     options.signal = ac.signal;
