@@ -18,7 +18,7 @@
   * [getCssUnit](#getcssunitvalue)
   * [getPseudoRandomIntBetween](#getpseudorandomintbetweenmin-max)
   * [isMotionAllowed](#ismotionallowed)
-  * [wait](#waitms-resolvevalue-abortsignal)
+  * [wait](#waitduration-resolvevalue-abortsignal)
 * [Migrating](#migrating)
   * [From version 1](#from-version-1)
   * [From `@codebundlesbyvik/js-*-operations`](#from-codebundlesbyvikjs--operations)
@@ -65,7 +65,7 @@ import { getCssPropValue } from "@codebundlesbyvik/js-helpers";
 * [getCssUnit](#getcssunitvalue)
 * [getPseudoRandomIntBetween](#getpseudorandomintbetweenmin-max)
 * [isMotionAllowed](#ismotionallowed)
-* [wait](#waitms-resolvevalue-abortsignal)
+* [wait](#waitduration-resolvevalue-abortsignal)
 
 <br>
 
@@ -276,13 +276,13 @@ isMotionAllowed();
 
 <br>
 
-### `wait(ms, resolveValue, abortSignal)`
+### `wait(duration, resolveValue, abortSignal)`
 Wait for a given amount of time before continuing script execution.
 
 `setTimeout()` wrapped in a `Promise`, which is optionally resolved with `resolveValue` and cancellable via an `AbortController`.
 
 #### Parameters
-* __*__ `ms` (`Number`): Time in milliseconds after which script execution will continue.
+* __*__ `duration` (`Number`): Time in milliseconds after which script execution will continue.
 * `resolveValue` (Any valid `Promise.resolve()` value): Value which the promise will be resolved with.
 * `abortSignal` (`AbortSignal`): `AbortController.signal` which the timeout can be cancelled with.
 

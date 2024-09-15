@@ -2,10 +2,12 @@
 
 // Slightly modified version of https://stackoverflow.com/a/25345746.
 function wait(
-    ms: number,
+    duration: number,
     resolveValue?: Awaited<ReturnType<typeof Promise.resolve>>,
     abortSignal?: AbortSignal,
 ) {
+    if (typeof duration !== "number") throw new Error("`time` must be a `Number`.");
+
     return new Promise((resolve, reject) => {
         const listener = () => {
             clearTimeout(timer);
@@ -19,7 +21,7 @@ function wait(
                 abortSignal?.removeEventListener("abort", listener);
                 resolve(resolveValue);
             },
-            ms >= 0 ? ms : 0,
+            duration >= 0 ? duration : 0,
         );
 
         abortSignal?.addEventListener("abort", listener);
