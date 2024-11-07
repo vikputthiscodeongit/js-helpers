@@ -3,18 +3,8 @@ const config = (api) => {
 
     return {
         presets: [
-            [
-                "@babel/preset-env",
-                {
-                    modules: false,
-                },
-            ],
-            [
-                "@babel/preset-typescript",
-                {
-                    rewriteImportExtensions: true,
-                },
-            ],
+            ["@babel/preset-env", { modules: false }],
+            ["@babel/preset-typescript", { rewriteImportExtensions: true }],
         ],
         parserOpts: { strictMode: true },
     };
