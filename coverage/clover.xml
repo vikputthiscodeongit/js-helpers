@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1726422527960" clover="3.2.0">
-  <project timestamp="1726422527960" name="All files">
+<coverage generated="1740490666614" clover="3.2.0">
+  <project timestamp="1740490666615" name="All files">
     <metrics statements="53" coveredstatements="53" conditionals="50" coveredconditionals="50" methods="8" coveredmethods="8" elements="111" coveredelements="111" complexity="0" loc="53" ncloc="53" packages="1" files="6" classes="6"/>
     <file name="createEl.ts" path="C:\wamp64\www\js-helpers\src\createEl.ts">
       <metrics statements="16" coveredstatements="16" conditionals="17" coveredconditionals="17" methods="2" coveredmethods="2"/>
