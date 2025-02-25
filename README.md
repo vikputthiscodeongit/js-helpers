@@ -302,29 +302,29 @@ await wait(5000, "5 seconds have passed", abortController.signal);
 ### From version 1
 Function parameters are now type checked. The following breaking changes were made:
 
-* __Removed__ `createEls()`
+* __Removed__ createEls
   * Write this code yourself - it was just a `for` loop.
-* __Removed__ `getRandomIntUnder()`
+* __Removed__ getRandomIntBelow
   * Use `getPseudoRandomIntBetween(0, x)` instead.
-* `getCssUnit()`: Removed support for `y` unit - will now return `null`.
-* `wait()`: Now takes in an `abortSignal` instead of an `abortController`.
+* getCssUnit: Removed support for `y` unit - will now return `null`
+* wait: Parameter 3 changed from an `AbortController` to an `AbortSignal`
 
 <br>
 
 ### From `@codebundlesbyvik/js-*-operations`
 Function parameters are now type checked. The following breaking changes were made:
 
-* __Removed__ `createEls()`
+* __Removed__ createEls
   * Write this code yourself - it was just a `for` loop.
-* __Removed__ `getRandomIntUnder()`
+* __Removed__ getRandomIntUnder()
   * Use `getPseudoRandomIntBetween(0, x)` instead.
-* __Renamed__ `getPropValue()` > `getCssPropValue()`
-* __Renamed__ `getUnit()` > `getCssUnit()`
-* __Renamed__ `timeToMs()` > `cssDurationToMs()`
+* __Renamed__ getPropValue > getCssPropValue
+* __Renamed__ getUnit > getCssUnit
+* __Renamed__ timeToMs > cssDurationToMs
 
 More changes were made other than the ones listed above. Problems caused by incompatible changes should be easy to debug by the error thrown.
 
 <br>
 
 ## License
-MIT © 2024 [Viktor Chin-Kon-Sung](https://github.com/vikputthiscodeongit)
+MIT © 2025 [Viktor Chin-Kon-Sung](https://github.com/vikputthiscodeongit)
