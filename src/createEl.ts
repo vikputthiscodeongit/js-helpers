@@ -18,7 +18,7 @@ function createEl<T extends HTMLElement>(
             ) {
                 if (rawVal !== false && rawVal !== null) {
                     console.warn(
-                        `Property of unsupported type ${Array.isArray(rawVal) ? "array" : typeof rawVal} will be ignored.`,
+                        `Property with value of type ${Array.isArray(rawVal) ? "array" : typeof rawVal} will be ignored.`,
                     );
                 }
 
