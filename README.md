@@ -47,7 +47,7 @@ Import the helpers you need...
 import { getCssPropValue } from "@codebundlesbyvik/js-helpers";
 ```
 
-... and compile your project with a module bundler.
+... and build your project.
 
 <br>
 
@@ -69,19 +69,14 @@ import { getCssPropValue } from "@codebundlesbyvik/js-helpers";
 
 <br>
 
-* Required parameters are indicated with __*__.
-* Default values for required parameters are listed first in the array of accepted parameter value types.
-
-<br>
-
 ### `createEl(tagName, attrs)`
 Create and return an `HTMLElement`.
 
 #### Parameters
-* __*__ `tagName` (`String`): The `HTMLElement`'s tag name.
-* `attrs` (`Object`): Individual attribute - value pairs to set on the `HTMLElement`.
+* `tagName` (`string`): The `HTMLElement`'s tag name.
+* `attrs?` (`object`): Individual attribute - value pairs to set on the `HTMLElement`.
 
-Special case is the `textContent` attribute. Use it to set the `HTMLElement`'s `textContent`.
+Use the `textContent` attribute to set the `HTMLElement`'s `textContent`.
 
 #### Example
 ```javascript
@@ -102,12 +97,12 @@ createEl("div", ATTRS);
 <br>
 
 ### `cssDurationToMs(duration)`
-Convert a CSS-style time duration value to a `Number` of milliseconds.
+Convert a CSS-style time duration value to a `number` of milliseconds.
 
 If the given value has no or an unrecognized unit, the returned value will be `null`.
 
 #### Parameters
-* `duration` (`String`): 'CSS-style' time duration.
+* `duration` (`string`): 'CSS-style' time duration.
 
 #### Supported units
 * `ms`: Milliseconds
@@ -146,9 +141,9 @@ cssDurationToMs("20");
 Make a `fetch()` call that's aborted by an `AbortController` after a specified amount of time.
 
 #### Parameters
-* __*__ `resource` (`RequestInfo | URL`): Location of the resource.
-* `fetchOptions` (`{} | RequestInit`): [Options accepted by `fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/fetch#options).
-* `timeoutDuration` (`8000 | Number`): Time in milliseconds after which `AbortController.abort()` is called and the `fetch()` is aborted.
+* `resource` (`RequestInfo` | `URL`): Location of the resource. See [`Request`](https://developer.mozilla.org/en-US/docs/Web/API/Request) and/or [`URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL).
+* `fetchOptions = {}` (`RequestInit`): Options for fetch(). See [`RequestInit`](https://developer.mozilla.org/en-US/docs/Web/API/RequestInit).
+* `timeoutDuration = 8000` (`number`): Time in milliseconds after which `AbortController.abort()` is called and the `fetch()` is aborted.
 
 #### Example
 ``` javascript
@@ -162,11 +157,11 @@ await fetchWithTimeout("https://example.com/api/endpoint", { method: "POST" }, 1
 <br>
 
 ### `getAverage(array, round)`
-Get the average of an array of `Number`s.
+Get the average of an array of `number`s.
 
 #### Parameters
-* __*__ `array` (`Number[]`): Array to check.
-* `round` (`"floor" | "ceil"`): Rounding method to apply to the average.
+* `array` (`number[]`): Array to check.
+* `round?` (`"floor"` | `"ceil"`): Rounding method to apply to the average.
 
 #### Example
 ``` javascript
@@ -191,8 +186,8 @@ Get an `Element`'s CSS property value.
 If the property is not set or unknown, the returned value will be `null`.
 
 #### Parameters
-* __*__ `el` (`Element`): The target.
-* __*__ `prop` (`String`): `Element` property to retrieve.
+* `el` (`Element`): The target.
+* `prop` (`string`): `Element` property to retrieve.
 
 #### Example
 ``` javascript
@@ -222,7 +217,7 @@ Get the unit of a quantitative 'CSS-style' value.
 If the value has no unit, the returned value will be `null`.
 
 #### Parameters
-* `value` (`String`): 'CSS-style' value to get the unit from.
+* `value` (`string`): 'CSS-style' value to get the unit from.
 
 #### Example
 ``` javascript
@@ -241,12 +236,11 @@ getCssUnit("100");
 ### `getPseudoRandomIntBetween(min, max)`
 Generate and return a positive pseudo-random integer between two given integers.
 
-⚠️ __Makes use of [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random), which ISN'T cryptographically secure. YOU WILL BE FIRED if you misuse this function in an attempt to generate secure, random integers.__ ⚠️
+⚠️ __Makes use of [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random), which ISN'T cryptographically secure. YOU WILL BE FIRED if you use this helper in production in an attempt to generate secure, random integers.__ ⚠️
 
 #### Parameters
-- None
-* __*__ `min` (`Number`): Positive integer relative to which the returned integer will be equal to or greater than.
-* __*__ `max` (`Number`): Positive integer relative to which the returned integer will be smaller than.
+* `min` (`number`): Positive integer relative to which the returned integer will be equal to or greater than.
+* `max` (`number`): Positive integer relative to which the returned integer will be smaller than.
 
 #### Example
 ```javascript
@@ -259,13 +253,16 @@ getPseudoRandomIntBetween(0, 10);
 ### `isMotionAllowed()`
 Check if `prefers-reduced-motion` is set to something other than `reduce`. Returns a `Boolean`.
 
+#### Parameters
+* None
+
 #### Example
 ``` javascript
-// 'prefers-reduced-motion' is set to 'reduce'.
+// 'prefers-reduced-motion: reduce'
 isMotionAllowed();
 // false
 
-// 'prefers-reduced-motion' is set to 'no-preference'.
+// 'prefers-reduced-motion: no-preference'
 isMotionAllowed();
 // true
 
@@ -277,14 +274,14 @@ isMotionAllowed();
 <br>
 
 ### `wait(duration, resolveValue, abortSignal)`
-Wait for a given amount of time before continuing script execution.
+Wait for a given amount of time before continuing function execution.
 
 `setTimeout()` wrapped in a `Promise`, which is optionally resolved with `resolveValue` and cancellable via an `AbortController`.
 
 #### Parameters
-* __*__ `duration` (`Number`): Time in milliseconds after which script execution will continue.
-* `resolveValue` (Any valid `Promise.resolve()` value): Value which the promise will be resolved with.
-* `abortSignal` (`AbortSignal`): `AbortController.signal` which the timeout can be cancelled with.
+* `duration` (`number`): Time in milliseconds after which script execution will continue.
+* `resolveValue?` (Any valid `Promise.resolve()` value): Value which the promise will be resolved with.
+* `abortSignal?` (`AbortSignal`): `AbortController.signal` which the timeout can be cancelled with.
 
 #### Example
 ``` javascript
