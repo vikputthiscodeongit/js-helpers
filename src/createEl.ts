@@ -2,8 +2,8 @@ function createEl<T extends HTMLElement>(
     tagName: string,
     attrs?: Record<string, string | number | boolean | null>,
 ) {
-    if (typeof tagName !== "string") throw new Error("`tagName` must be a `String`.");
-    if (attrs && typeof attrs !== "object") throw new Error("`attrs` must be an `Object`.");
+    if (typeof tagName !== "string") throw new Error("`tagName` must be a `string`.");
+    if (attrs && typeof attrs !== "object") throw new Error("`attrs` must be an `object`.");
 
     const el = document.createElement(tagName) as T;
 
