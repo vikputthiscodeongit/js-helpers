@@ -3,8 +3,8 @@ async function fetchWithTimeout(
     fetchOptions?: RequestInit,
     timeoutDuration?: number,
 ) {
-    if (typeof timeoutDuration !== "number")
-        throw new Error("`timeoutDuration` must be a `Number`.");
+    if (timeoutDuration && typeof timeoutDuration !== "number")
+        throw new Error("`timeoutDuration` must be a `number`.");
 
     const options = fetchOptions || {};
 
