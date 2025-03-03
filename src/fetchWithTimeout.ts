@@ -12,7 +12,7 @@ async function fetchWithTimeout(
     options.signal = ac.signal;
     const timeoutId = setTimeout(
         () => ac.abort(),
-        timeoutDuration && timeoutDuration >= 0 ? timeoutDuration : 8000,
+        timeoutDuration === undefined ? 8000 : timeoutDuration < 0 ? 0 : timeoutDuration,
     );
 
     const response = await fetch(resource, options);
