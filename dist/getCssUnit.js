@@ -1,1 +1,1 @@
-function getCssUnit(value){if("string"!=typeof value)throw new Error("`value` must be a `String`.");const length=value.length;let i=length;for(;i--;)if(!Number.isNaN(Number.parseInt(value[i])))return value.slice(i+1,length)||null;return null}export{getCssUnit as default};
+function getCssUnit(value){if("string"!=typeof value)throw new Error("`value` must be a `string`.");const length=value.length;let i=length;for(;i--;)if(!Number.isNaN(Number.parseInt(value[i])))return value.slice(i+1,length)||null;return null}export{getCssUnit as default};
