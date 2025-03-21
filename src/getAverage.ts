@@ -1,5 +1,6 @@
 function getAverage(numbers: number[], round?: "floor" | "ceil") {
-    if (!Array.isArray(numbers)) throw new Error("`numbers` must be an array.");
+    if (!Array.isArray(numbers) || numbers.length === 0)
+        throw new Error("`numbers` must be a non-empty array.");
     if (round && typeof round !== "string") throw new Error("`round` value is invalid.");
 
     const average = numbers.reduce((prev, cur) => prev + cur, 0) / numbers.length;
