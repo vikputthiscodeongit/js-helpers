@@ -29,7 +29,7 @@
 ## Compatibility
 All helpers are compatible with the ECMAScript 2015 (ES6) specification except for `fetchWithTimeout`, which is an `async` function and thus requires an ECMAScript 2017 (ES8) compatible environment.
 
-Some helpers utilize DOM methods and thus requires an environment that supports those.
+Some helpers utilize DOM methods and as such require an environment that supports those.
 
 <br>
 
