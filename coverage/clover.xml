@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1741706083050" clover="3.2.0">
-  <project timestamp="1741706083050" name="All files">
-    <metrics statements="54" coveredstatements="54" conditionals="50" coveredconditionals="50" methods="9" coveredmethods="9" elements="113" coveredelements="113" complexity="0" loc="54" ncloc="54" packages="1" files="7" classes="7"/>
+<coverage generated="1747852667828" clover="3.2.0">
+  <project timestamp="1747852667828" name="All files">
+    <metrics statements="55" coveredstatements="55" conditionals="52" coveredconditionals="52" methods="9" coveredmethods="9" elements="116" coveredelements="116" complexity="0" loc="55" ncloc="55" packages="1" files="7" classes="7"/>
     <file name="createEl.ts" path="C:\wamp64\www\js-helpers\src\createEl.ts">
       <metrics statements="16" coveredstatements="16" conditionals="17" coveredconditionals="17" methods="2" coveredmethods="2"/>
       <line num="5" count="10" type="cond" truecount="1" falsecount="0"/>
@@ -35,15 +35,16 @@
       <line num="28" count="5" type="stmt"/>
     </file>
     <file name="getAverage.ts" path="C:\wamp64\www\js-helpers\src\getAverage.ts">
-      <metrics statements="8" coveredstatements="8" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
-      <line num="2" count="15" type="cond" truecount="1" falsecount="0"/>
-      <line num="3" count="12" type="cond" truecount="3" falsecount="0"/>
-      <line num="5" count="31" type="stmt"/>
-      <line num="7" count="11" type="cond" truecount="1" falsecount="0"/>
-      <line num="9" count="7" type="cond" truecount="3" falsecount="0"/>
-      <line num="11" count="1" type="stmt"/>
-      <line num="14" count="1" type="stmt"/>
-      <line num="17" count="5" type="stmt"/>
+      <metrics statements="9" coveredstatements="9" conditionals="10" coveredconditionals="10" methods="2" coveredmethods="2"/>
+      <line num="2" count="15" type="cond" truecount="3" falsecount="0"/>
+      <line num="3" count="4" type="stmt"/>
+      <line num="4" count="11" type="cond" truecount="3" falsecount="0"/>
+      <line num="6" count="31" type="stmt"/>
+      <line num="8" count="10" type="cond" truecount="1" falsecount="0"/>
+      <line num="10" count="7" type="cond" truecount="3" falsecount="0"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="18" count="5" type="stmt"/>
     </file>
     <file name="getCssPropValue.ts" path="C:\wamp64\www\js-helpers\src\getCssPropValue.ts">
       <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
