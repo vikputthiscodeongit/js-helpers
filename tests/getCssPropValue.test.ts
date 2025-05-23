@@ -1,5 +1,5 @@
-import { expect, test } from "@jest/globals";
-import getCssPropValue from "../src/getCssPropValue.ts";
+import { expect, test } from "vitest";
+import getCssPropValue from "../src/getCssPropValue";
 
 test("Valid el type with no styles", () => {
     const el = document.createElement("div");

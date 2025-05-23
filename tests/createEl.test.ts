@@ -1,5 +1,5 @@
-import { expect, test } from "@jest/globals";
-import createEl from "../src/createEl.ts";
+import { expect, test } from "vitest";
+import createEl from "../src/createEl";
 
 test("Valid tagName, no attrs items", () => {
     const el = createEl("div");

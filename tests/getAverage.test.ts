@@ -1,5 +1,5 @@
-import { expect, test } from "@jest/globals";
-import getAverage from "../src/getAverage.ts";
+import { expect, test } from "vitest";
+import getAverage from "../src/getAverage";
 
 test("Valid input items", () => {
     expect(getAverage([0])).toBe(0);
