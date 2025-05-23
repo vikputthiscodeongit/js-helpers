@@ -1,5 +1,5 @@
-import { expect, test } from "@jest/globals";
-import getCssUnit from "../src/getCssUnit.ts";
+import { expect, test } from "vitest";
+import getCssUnit from "../src/getCssUnit";
 
 test("Valid input type with unit", () => {
     expect(getCssUnit("1px")).toBe("px");

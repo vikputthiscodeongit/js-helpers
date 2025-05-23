@@ -1,5 +1,5 @@
-import { expect, test } from "@jest/globals";
-import getPseudoRandomIntBetween from "../src/getPseudoRandomIntBetween.ts";
+import { expect, test } from "vitest";
+import getPseudoRandomIntBetween from "../src/getPseudoRandomIntBetween";
 
 test("Min zero, max positive", () => {
     const result = getPseudoRandomIntBetween(0, 10);

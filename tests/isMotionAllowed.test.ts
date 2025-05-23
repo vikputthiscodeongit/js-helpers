@@ -1,23 +1,23 @@
-import { afterEach, expect, jest, test } from "@jest/globals";
-import isMotionAllowed from "../src/isMotionAllowed.ts";
+import { afterEach, expect, test, vi } from "vitest";
+import isMotionAllowed from "../src/isMotionAllowed";
 
-function createMatchMediaMotion(preference: "no-preference" | "reduce" | null) {
+function createMatchMediaMotion(query: "no-preference" | "reduce" | null) {
     window.matchMedia = () => {
         return {
-            matches: preference === "reduce",
-            media: preference ? `(prefers-reduced-motion: ${preference})` : "",
+            matches: query === "reduce",
+            media: query ? `(prefers-reduced-motion: ${query})` : "",
             onchange: null,
-            addListener: jest.fn(), // deprecated
-            removeListener: jest.fn(), // deprecated
-            addEventListener: jest.fn(),
-            removeEventListener: jest.fn(),
-            dispatchEvent: jest.fn() as (event: Event) => boolean,
+            addListener: vi.fn(), // deprecated
+            removeListener: vi.fn(), // deprecated
+            addEventListener: vi.fn(),
+            removeEventListener: vi.fn(),
+            dispatchEvent: vi.fn() as (event: Event) => boolean,
         };
     };
 }
 
 afterEach(() => {
-    jest.resetAllMocks();
+    vi.resetAllMocks();
 });
 
 test("No motion preference set", () => {

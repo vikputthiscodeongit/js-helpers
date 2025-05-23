@@ -1,5 +1,5 @@
-import { expect, test } from "@jest/globals";
-import cssDurationToMs from "../src/cssDurationToMs.ts";
+import { expect, test } from "vitest";
+import cssDurationToMs from "../src/cssDurationToMs";
 
 test("Valid duration type", () => {
     expect(cssDurationToMs("10ms")).toBe(10);

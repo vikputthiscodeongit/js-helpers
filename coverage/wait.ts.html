@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for cssDurationToMs.ts</title>
+    <title>Code coverage report for wait.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> cssDurationToMs.ts</h1>
+        <h1><a href="index.html">All files</a> wait.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/11</span>
+                <span class='fraction'>0/22</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/10</span>
+                <span class='fraction'>0/22</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -94,71 +94,68 @@
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import getCssUnit from "./getCssUnit.ts";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable @typescript-eslint/prefer-promise-reject-errors */
 &nbsp;
-function cssDurationToMs(duration: string) {
-    if (typeof duration !== "string") throw new Error("`duration` must be a `string`.");
+// Slightly modified version of https://stackoverflow.com/a/25345746.
+<span class="cstat-no" title="statement not covered" >function wait(</span>
+<span class="cstat-no" title="statement not covered" >    duration: number,</span>
+<span class="cstat-no" title="statement not covered" >    resolveValue?: Awaited&lt;ReturnType&lt;typeof Promise.resolve&gt;&gt;,</span>
+<span class="cstat-no" title="statement not covered" >    abortSignal?: AbortSignal,</span>
+<span class="cstat-no" title="statement not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof duration !== "number") throw new Error("`time` must be a `number`.");</span>
 &nbsp;
-    const timeAsNumber = Number.parseFloat(duration);
+<span class="cstat-no" title="statement not covered" >    return new Promise((resolve, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        const listener = () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            clearTimeout(timer);</span>
+<span class="cstat-no" title="statement not covered" >            reject(abortSignal?.reason);</span>
+<span class="cstat-no" title="statement not covered" >        };</span>
 &nbsp;
-    switch (getCssUnit(duration)) {
-        case "ms":
-            return timeAsNumber;
+<span class="cstat-no" title="statement not covered" >        abortSignal?.throwIfAborted();</span>
 &nbsp;
-        case "s":
-            return timeAsNumber * 1000;
+<span class="cstat-no" title="statement not covered" >        const timer = setTimeout(</span>
+<span class="cstat-no" title="statement not covered" >            () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                abortSignal?.removeEventListener("abort", listener);</span>
+<span class="cstat-no" title="statement not covered" >                resolve(resolveValue);</span>
+<span class="cstat-no" title="statement not covered" >            },</span>
+<span class="cstat-no" title="statement not covered" >            duration &gt;= 0 ? duration : 0,</span>
+<span class="cstat-no" title="statement not covered" >        );</span>
 &nbsp;
-        case "m":
-            return timeAsNumber * 60000;
+<span class="cstat-no" title="statement not covered" >        abortSignal?.addEventListener("abort", listener);</span>
+<span class="cstat-no" title="statement not covered" >    });</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-        case "h":
-            return timeAsNumber * 3600000;
-&nbsp;
-        case "d":
-            return timeAsNumber * 86400000;
-&nbsp;
-        case "w":
-            return timeAsNumber * 604800000;
-&nbsp;
-        default:
-            return null;
-    }
-}
-&nbsp;
-export { cssDurationToMs as default };
+export { wait as default };
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -166,7 +163,7 @@ export { cssDurationToMs as default };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-21T18:37:47.815Z
+                at 2025-05-23T15:22:59.637Z
             </div>
         <script src="prettify.js"></script>
         <script>
