@@ -1,61 +1,48 @@
 import { expect, test } from "vitest";
 import getCssPropValue from "../src/getCssPropValue";
 
-test("Valid el type with no styles", () => {
+test("Valid el type without custom styles", () => {
     const el = document.createElement("div");
-    const prop = "color";
 
-    expect(getCssPropValue(el, prop)).toBeNull();
+    expect(getCssPropValue(el, "margin")).toBeNull();
+    expect(getCssPropValue(el, "color")).toBe("rgb(0, 0, 0)");
 });
 
-test("Valid el type, valid prop", () => {
+test("Valid el type with custom styles", () => {
     const el = document.createElement("div");
+    el.style.margin = "1rem";
     el.style.color = "red";
-    const prop = "color";
+    el.style.backgroundColor = "rgb(255, 127, 0)";
 
-    expect(getCssPropValue(el, prop)).toBe("red");
+    expect(getCssPropValue(el, "margin")).toBe("1rem");
+    expect(getCssPropValue(el, "color")).toBe("rgb(255, 0, 0)");
+    expect(getCssPropValue(el, "background-color")).toBe("rgb(255, 127, 0)");
 });
 
-test("Valid el type, unset prop", () => {
+test("Valid el type, unknown prop", () => {
     const el = document.createElement("div");
-    const prop = "color";
+    el.style.backgroundColor = "rgb(255, 127, 0)";
 
-    expect(getCssPropValue(el, prop)).toBeNull();
-});
-
-test("Valid el type, unset prop", () => {
-    const el = document.createElement("div");
-    const prop = "unknown-property";
-
-    expect(getCssPropValue(el, prop)).toBeNull();
+    expect(getCssPropValue(el, "backgroundColor")).toBeNull();
+    expect(getCssPropValue(el, "unknown-property")).toBeNull();
 });
 
 test("Valid el type, invalid prop type", () => {
     const el = document.createElement("div");
-    const prop = true;
+    const prop = true as unknown as string;
 
-    expect(() => getCssPropValue(el, prop as unknown as string)).toThrowError();
+    expect(() => getCssPropValue(el, prop)).toThrowError();
 });
 
-test("Invalid el type, unset prop", () => {
-    const el = null;
-    const prop = "unknown-property";
+test("Invalid el type, unknown prop", () => {
+    const el = null as unknown as HTMLElement;
 
-    expect(() => getCssPropValue(el as unknown as HTMLElement, prop)).toThrowError();
-});
-
-test("Invalid el type, unset prop", () => {
-    const el = 0;
-    const prop = "unknown-property";
-
-    expect(() => getCssPropValue(el as unknown as HTMLElement, prop)).toThrowError();
+    expect(() => getCssPropValue(el, "unknown-property")).toThrowError();
 });
 
 test("Invalid el type, invalid prop type", () => {
-    const el = 0;
-    const prop = false;
+    const el = 0 as unknown as HTMLElement;
+    const prop = false as unknown as string;
 
-    expect(() =>
-        getCssPropValue(el as unknown as HTMLElement, prop as unknown as string),
-    ).toThrowError();
+    expect(() => getCssPropValue(el, prop)).toThrowError();
 });
