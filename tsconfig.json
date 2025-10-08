@@ -4,10 +4,11 @@
     "compilerOptions": {
         "strict": true,
         "module": "ES2015",
-        "moduleResolution": "bundler",
+        "rewriteRelativeImportExtensions": true,
         "declaration": true,
         "declarationDir": "dist/types",
         "outDir": "dist",
+        "verbatimModuleSyntax": true,
         "lib": ["ES2017", "DOM"],
         "target": "ES2017"
     }
