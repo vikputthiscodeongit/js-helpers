@@ -1,4 +1,4 @@
-import getCssUnit from "./getCssUnit";
+import getCssUnit from "./getCssUnit.ts";
 
 function cssDurationToMs(duration: string) {
     if (typeof duration !== "string") throw new Error("`duration` must be a `string`.");
