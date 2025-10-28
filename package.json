@@ -55,11 +55,11 @@
     "build": "npm run lint-fix && cross-env NODE_ENV=production npm run test && rimraf dist && cross-env NODE_ENV=production npm run compile && npm run minify"
   },
   "devDependencies": {
-    "@eslint/js": "^9.37.0",
+    "@eslint/js": "^9.38.0",
     "@tsconfig/recommended": "^1.0.10",
     "@vitest/coverage-v8": "^4.0.4",
     "cross-env": "^10.1.0",
-    "eslint": "^9.37.0",
+    "eslint": "^9.38.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "globals": "^16.4.0",
