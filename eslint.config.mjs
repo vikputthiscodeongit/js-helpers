@@ -5,7 +5,7 @@ import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended"
 
 export default tsEslint.config(
     {
-        ignores: ["coverage/*", "dist/*", "tests/*", "**/*.*js"],
+        ignores: ["coverage/*", "dist/*", "test/*", "*.cjs", "*.js", "*.mjs", "*.ts"],
     },
 
     eslintJs.configs.recommended,
