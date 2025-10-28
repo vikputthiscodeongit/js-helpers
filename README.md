@@ -236,7 +236,7 @@ getCssUnit("100");
 ### `getPseudoRandomIntBetween(min, max)`
 Generate and return a positive pseudo-random integer between two given integers.
 
-⚠️ __Makes use of [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random), which ISN'T cryptographically secure. YOU WILL BE FIRED if you use this helper in production in an attempt to generate secure, random integers.__ ⚠️
+⚠️ **Makes use of [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random), which ISN'T cryptographically secure. YOU WILL BE FIRED if you use this helper in production in an attempt to generate secure, random integers.** ⚠️
 
 #### Parameters
 * `min` (`number`): Positive integer relative to which the returned integer will be equal to or greater than.
@@ -297,27 +297,27 @@ await wait(5000, "5 seconds have passed", abortController.signal);
 
 ## Migrating
 ### From version 1
-Function parameters are now type checked. The following breaking changes were made:
+Function parameters are now type checked.
 
-* __Removed__ createEls
+The following changes are breaking:
+* **Removed**: `createEls()`
   * Write this code yourself - it was just a `for` loop.
-* __Removed__ getRandomIntBelow
+* **Removed**: `getRandomIntBelow()`
   * Use `getPseudoRandomIntBetween(0, x)` instead.
-* getCssUnit: Removed support for `y` unit - will now return `null`
-* wait: Parameter 3 changed from an `AbortController` to an `AbortSignal`
-
-<br>
+* **Removed**: `getCssUnit()` support for `y` unit.
+* **Changed**: `wait()` parameter 3 changed from an `AbortController` to an `AbortSignal`
 
 ### From `@codebundlesbyvik/js-*-operations`
-Function parameters are now type checked. The following breaking changes were made:
+Function parameters are now type checked.
 
-* __Removed__ createEls
+The following changes are breaking:
+* **Removed**: `createEls()`
   * Write this code yourself - it was just a `for` loop.
-* __Removed__ getRandomIntUnder()
+* **Removed**: `getRandomIntUnder()`
   * Use `getPseudoRandomIntBetween(0, x)` instead.
-* __Renamed__ getPropValue > getCssPropValue
-* __Renamed__ getUnit > getCssUnit
-* __Renamed__ timeToMs > cssDurationToMs
+* **Renamed**: `getPropValue()` > `getCssPropValue()`
+* **Renamed**: `getUnit()` > `getCssUnit()`
+* **Renamed**: `timeToMs()` > `cssDurationToMs()`
 
 More changes were made other than the ones listed above. Problems caused by incompatible changes should be easy to debug by the error thrown.
 
