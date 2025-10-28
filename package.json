@@ -52,7 +52,7 @@
     "test": "vitest run",
     "compile": "tsc",
     "minify": "node terser.config.cjs",
-    "build": "cross-env NODE_ENV=production npm run lint-fix && npm run test && rimraf dist && npm run compile && npm run minify"
+    "build": "npm run lint-fix && cross-env NODE_ENV=production npm run test && rimraf dist && cross-env NODE_ENV=production npm run compile && npm run minify"
   },
   "devDependencies": {
     "@eslint/js": "^9.37.0",
