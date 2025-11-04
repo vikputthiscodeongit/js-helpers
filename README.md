@@ -158,7 +158,7 @@ await fetchWithTimeout("https://example.com/api/endpoint", { method: "POST" }, 1
 Get the average of an array of `number`s.
 
 #### Parameters
-* `array` (`number[]`): Array to check.
+* `array` (`number[]`): Numbers to average.
 * `round?` (`"nearest"` | `"floor"` | `"ceil"`): Rounding method to apply to the average.
 
 #### Example
@@ -175,7 +175,7 @@ getAverage([3, 8, 41, 88, 1024], "nearest");
 getAverage([3, 8, 41, 88, 1024], "floor");
 // 232
 
-getAverage([0.1, 0.33, 0.82, 1], "ceil");
+getAverage([0.1, 0.33, 0.47, 0.49], "ceil");
 // 1
 ```
 
