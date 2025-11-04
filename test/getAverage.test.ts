@@ -6,10 +6,14 @@ test("Valid input items", () => {
     expect(getAverage([0, 1, 5, 8, 10])).toBeCloseTo(4.8);
     expect(getAverage([0.1, 0.44, 0.9])).toBeCloseTo(0.48);
     expect(getAverage([-104, -52, -87])).toBe(-81);
-    expect(getAverage([-1, -9, 0.00001, 100000])).toBeCloseTo(24997.5);
-    expect(getAverage([-1, -9, 0.00001, 100000], "nearest")).toBe(24998);
-    expect(getAverage([-1, -9, 0.00001, 100000], "floor")).toBe(24997);
-    expect(getAverage([-1, -9, 0.00001, 100000], "ceil")).toBe(24998);
+    expect(getAverage([-10, -9, -8, -7])).toBeCloseTo(-8.5);
+    expect(getAverage([-10, -9, -8, -7], "nearest")).toBe(-8);
+    expect(getAverage([-10, -9, -8, -7], "floor")).toBe(-9);
+    expect(getAverage([-10, -9, -8, -7], "ceil")).toBe(-8);
+    expect(getAverage([0.1, 0.33, 0.47, 0.49])).toBeCloseTo(0.3475);
+    expect(getAverage([0.1, 0.33, 0.47, 0.49], "nearest")).toBe(0);
+    expect(getAverage([0.1, 0.33, 0.47, 0.49], "floor")).toBe(0);
+    expect(getAverage([0.1, 0.33, 0.47, 0.49], "ceil")).toBe(1);
 });
 
 test("Valid input type, invalid items", () => {
