@@ -161,7 +161,7 @@ Get the average of an array of `number`s.
 
 #### Parameters
 * `array` (`number[]`): Array to check.
-* `round?` (`"floor"` | `"ceil"`): Rounding method to apply to the average.
+* `round?` (`"nearest"` | `"floor"` | `"ceil"`): Rounding method to apply to the average.
 
 #### Example
 ``` javascript
@@ -170,6 +170,9 @@ getAverage([1, 2, 3]);
 
 getAverage([3, 8, 41, 88, 1024]);
 // 232.8
+
+getAverage([3, 8, 41, 88, 1024], "nearest");
+// 233
 
 getAverage([3, 8, 41, 88, 1024], "floor");
 // 232
