@@ -80,14 +80,12 @@ Use the `textContent` attribute to set the `HTMLElement`'s `textContent`.
 
 #### Example
 ```javascript
-const ATTRS = {
+createEl("div", {
     class: "example-div",
     id: "example-div-1",
     ariaHidden: "true",
     textContent: "This is an example."
-};
-
-createEl("div", ATTRS);
+});
 
 // <div class="example-div" id="example-div-1" aria-hidden="true">
 //     This is an example
