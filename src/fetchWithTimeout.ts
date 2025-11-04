@@ -10,9 +10,11 @@ async function fetchWithTimeout(
 
     const ac = new AbortController();
     options.signal = ac.signal;
+    const timeout =
+        timeoutDuration === undefined ? 8000 : timeoutDuration < 0 ? 0 : timeoutDuration;
     const timeoutId = setTimeout(
-        () => ac.abort(),
-        timeoutDuration === undefined ? 8000 : timeoutDuration < 0 ? 0 : timeoutDuration,
+        () => ac.abort(`Request took more than ${timeout} ms to complete.`),
+        timeout,
     );
 
     const response = await fetch(resource, options);
